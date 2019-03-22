@@ -156,6 +156,7 @@ export NVM_DIR="$HOME/.nvm"
 #================
 #export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH=$PATH:"$HOME/.stack/programs/x86_64-linux/ghc-8.4.4/bin":"$HOME/.cabal/bin"
+export LD_LIBRARY_PATH=~/.stack/global-project/.stack-work/install/x86_64-linux/lts-12.25/8.4.4/lib/x86_64-linux-ghc-8.4.4
 
 #================
 # android

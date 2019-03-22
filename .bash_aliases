@@ -13,10 +13,14 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 alias t=tmux
 alias g=grep
 alias ht=htop
-alias h=hoogle
+alias h='hoogle --count=5'
 alias v=vim
 alias a=atril
 alias s=source
+alias c=clear
+
+# haskell
+alias ghci-auto="ghcid '--command=stack ghci' --test=main"
 
 # books I'm currently reading
 alias lyahftgg="atril ~/programming-misc/books/haskell/lyahftgg.pdf"
