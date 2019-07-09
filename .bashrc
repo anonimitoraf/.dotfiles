@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+set -o vi
+
 # Make <C-s> forward-history search work
 stty -ixon
 
@@ -164,3 +166,5 @@ export LD_LIBRARY_PATH=~/.stack/global-project/.stack-work/install/x86_64-linux/
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
