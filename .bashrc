@@ -4,6 +4,8 @@
 
 set -o vi
 
+export PATH=~/.local/bin:$PATH
+
 # Make <C-s> forward-history search work
 stty -ixon
 
@@ -108,6 +110,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_env_vars ]; then
+    . ~/.bash_env_vars
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -153,12 +159,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#================
-# haskell
-#================
-#export PATH=$PATH:"$HOME/.cabal/bin"
-export PATH=$PATH:"$HOME/.stack/programs/x86_64-linux/ghc-8.4.4/bin":"$HOME/.cabal/bin"
-export LD_LIBRARY_PATH=~/.stack/global-project/.stack-work/install/x86_64-linux/lts-12.25/8.4.4/lib/x86_64-linux-ghc-8.4.4
 
 #================
 # android
@@ -168,3 +168,11 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+
+
+#kubectx and kubens
+export PATH=~/.kubectx:$PATH
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

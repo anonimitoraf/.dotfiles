@@ -18,9 +18,14 @@ alias v=vim
 alias a=atril
 alias s=source
 alias c=clear
+alias scrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
 
 # haskell
 alias ghci-auto="ghcid '--command=stack ghci' --test=main"
 
 # books I'm currently reading
 alias lyahftgg="atril ~/programming-misc/books/haskell/lyahftgg.pdf"
+
+# kubernetes
+alias k=kubectl
+alias kns=kubens
