@@ -155,7 +155,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="^chromium-browser$"] floating disable, move window to workspace current
-for_window [class="^Chromium-browser$"] floating disable, move window to workspace current
+for_window [class="^Google-chrome$"] floating disable, move window to workspace current
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -338,7 +338,7 @@ bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to sw
 
 # custom shortcuts
 bindsym $mod+v exec code
-bindsym $mod+c exec chromium-browser
+bindsym $mod+c exec google-chrome
 bindsym $mod+e exec emacs-gtk
 
 # Multi-screen screenshots with scrot
