@@ -19,6 +19,7 @@ alias a=atril
 alias s=source
 alias c=clear
 alias scrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
+alias lg=lazygit
 
 # haskell
 alias ghci-auto="ghcid '--command=stack ghci' --test=main"
