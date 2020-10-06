@@ -59,8 +59,8 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -341,7 +341,7 @@ bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to sw
 # custom shortcuts
 bindsym $mod+v exec code
 bindsym $mod+c exec google-chrome
-bindsym $mod+e exec emacs-gtk
+bindsym $mod+e exec emacs
 
 # Multi-screen screenshots with scrot
 bindsym --release Shift+Print exec scrot --select 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
