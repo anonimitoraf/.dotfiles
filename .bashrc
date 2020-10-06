@@ -153,14 +153,6 @@ then
 fi
 
 #================
-# nvm
-#================
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-#================
 # android
 #================
 export ANDROID_HOME=~/Android/Sdk
@@ -176,3 +168,4 @@ export NVS_HOME="$HOME/.nvs"
 export PATH=~/.kubectx:$PATH
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.nvs:$PATH"
