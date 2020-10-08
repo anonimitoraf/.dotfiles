@@ -30,3 +30,9 @@ alias lyahftgg="atril ~/programming-misc/books/haskell/lyahftgg.pdf"
 # kubernetes
 alias k=kubectl
 alias kns=kubens
+
+alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
+
+# Make i3lock black
+alias i3lock="3lock -c 000000"
+
