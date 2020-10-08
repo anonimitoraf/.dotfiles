@@ -9,7 +9,18 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-font xft:URWGothic-Book 11
+font pango:Ubuntu Mono, FontAwesome 15
+
+# --- Title bar icons
+for_window [class="(?i)firefox"] title_format "<tt></tt><span foreground='#FF6611'>  </span><tt> </tt>%title"
+for_window [class="(.*)chrome(.*)"] title_format "<tt></tt><span foreground='#367dd0'>  </span><tt> </tt>%title"
+for_window [class="(.*)terminal(.*)"] title_format "<tt></tt><span foreground='#00FF00' background='#000000'>  </span><tt> </tt>%title"
+for_window [class="Slack"] title_format "<tt></tt><span foreground='#875656' >  </span><tt> </tt>%title"
+for_window [class="azuredatastudio"] title_format "<tt></tt><span foreground='#FFBF00'>  </span><tt> </tt>%title"
+for_window [class="Medis"] title_format "<tt></tt><span foreground='#CC0000'>  </span><tt> </tt>%title"
+for_window [class="Emacs"] title_format "<tt></tt><span foreground='#9d40ff'>  </span><tt> </tt>%title"
+for_window [class="copyq"] title_format "<tt></tt><span foreground='#ffffff'>  </span><tt> </tt>%title"
+# ---
 
 floating_modifier $mod
 
@@ -81,6 +92,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
+
+for_window [class="copyq"] move container to scratchpad
+for_window [class="Shutter"] move container to scratchpad
 
 # navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -216,6 +230,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+exec_always --no-startup-id shutter
 exec_always --no-startup-id copyq
 exec_always --no-startup-id copyq show
 exec_always --no-startup-id ff-theme-util
