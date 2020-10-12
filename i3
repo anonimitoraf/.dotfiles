@@ -370,3 +370,7 @@ mode "passthrough" {
 bindsym Mod1+Alt_L mode "passthrough"
 
 # resize window (you can also use the mouse for that)
+
+bar {
+  status_command $HOME/.conky-i3bar
+}
