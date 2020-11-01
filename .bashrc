@@ -7,7 +7,7 @@ set -o vi
 export PATH=~/.local/bin:$PATH
 
 # Make <C-s> forward-history search work
-stty -ixon
+# stty -ixon
 
 # If not running interactively, don't do anything
 case $- in
