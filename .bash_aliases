@@ -34,5 +34,5 @@ alias kns=kubens
 alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
 
 # Make i3lock black
-alias i3lock="3lock -c 000000"
+alias i3lock="i3lock -c 000000"
 
