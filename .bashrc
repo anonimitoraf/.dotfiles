@@ -141,7 +141,7 @@ function _update_ps1() {
     PS1=$(powerline-shell $?)
 }
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 && -z "$INSIDE_EMACS" ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
@@ -176,3 +176,11 @@ export PATH="$HOME/.nvs:$PATH"
 
 # Rust stuff
 export PATH=~/.cargo/bin:$PATH
+
+# Python stuff
+export PATH="/home/anonimito/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$PATH:/opt/mssql-tools/bin"
+[ -f "/home/anonimito/.ghcup/env" ] && source "/home/anonimito/.ghcup/env" # ghcup-env
