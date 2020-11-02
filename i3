@@ -7,7 +7,7 @@ hide_edge_borders none
 
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# bindsym $mod+n border normal
 
 font pango:Ubuntu Mono, FontAwesome 15
 
@@ -233,9 +233,9 @@ exec --no-startup-id clipit
 exec_always --no-startup-id shutter
 exec_always --no-startup-id copyq
 exec_always --no-startup-id copyq show
+exec_always --no-startup-id arandr ~/.screenlayout/default.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 # exec_always fluxgui
 
 # Theme colors
@@ -305,6 +305,7 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 # exec scripts
 exec --no-startup-id xmodmap /home/anonimito/.capsEsc
 exec --no-startup-id hsetroot -solid "#FFFFFF"
+exec --no-startup-id /home/anonimito/.dropbox-dist/dropboxd
 exec_always bash -c 'sleep 5 && --no-startup-id /home/anonimito/foss/activitywatch/aw-qt'
 
 ## Volume control
@@ -357,6 +358,7 @@ bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to sw
 bindsym $mod+v exec code
 bindsym $mod+c exec google-chrome
 bindsym $mod+e exec emacs
+bindsym $mod+n exec ~/.emacs_anywhere/bin/run
 
 # Multi-screen screenshots with scrot
 bindsym --release Shift+Print exec scrot --select 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
