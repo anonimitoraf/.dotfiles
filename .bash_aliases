@@ -33,6 +33,10 @@ alias kns=kubens
 
 alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
 
+# Projects
+alias comfykafka="node ~/work/open-source/clojure/comfykafka/target/js/compiled/comfykafka.js"
+alias cd-to-tung-frontend="cd ~/work/pegleg/clojure/tung-frontend"
+
 # Make i3lock black
 alias i3lock="i3lock -c 000000"
 
