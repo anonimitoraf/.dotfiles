@@ -1,0 +1,22 @@
+{
+  "segments": [
+    "newline",
+    "username",
+    "hostname",
+    "cwd",
+    "git",
+    "newline",
+    "time",
+    "root"
+  ],
+  "mode": "flat",
+  "cwd": {
+    "full_cwd": true
+  },
+  "vcs": {
+    "show_symbol": true
+  },
+  "time": {
+    "format": "%a %-d %b - %H:%M"
+  }
+}
