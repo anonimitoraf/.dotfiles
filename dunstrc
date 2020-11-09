@@ -255,9 +255,9 @@
     # will be executed in sequence.
 
     # Defaults
-    mouse_left_click = do_action, close_current
-    mouse_middle_click = close_current
-    mouse_right_click = close_all
+    # mouse_left_click = do_action, close_current
+    # mouse_middle_click = close_current
+    # mouse_right_click = close_all
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
