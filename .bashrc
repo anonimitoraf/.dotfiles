@@ -177,10 +177,6 @@ export PATH="$HOME/.nvs:$PATH"
 # Rust stuff
 export PATH=~/.cargo/bin:$PATH
 
-# Python stuff
-export PATH="/home/anonimito/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export PATH="$PATH:/opt/mssql-tools/bin"
 [ -f "/home/anonimito/.ghcup/env" ] && source "/home/anonimito/.ghcup/env" # ghcup-env
