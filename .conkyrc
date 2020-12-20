@@ -53,6 +53,7 @@ conky.text = [[
     { "full_text": "${font FontAwesome:size=10}Mem used: $mem" , "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10} ${downspeedf wlx30b49eab534b} KB/s" , "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10} ${upspeedf wlx30b49eab534b} KB/s" , "color": "\#B7E0E2" },
+    { "full_text": "Battery ${battery_percent BAT0}%", "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10} ${time %d/%m - %R} " , "color": ${if_match ${memperc}<90}"\#B7E0E2"${else}"\#ff0000"${endif} }
 ],
 ]];
