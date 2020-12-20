@@ -93,9 +93,6 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-for_window [class="copyq"] move container to scratchpad
-for_window [class="Shutter"] move container to scratchpad
-
 # navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
@@ -178,7 +175,7 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -227,16 +224,13 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec_always --no-startup-id shutter
-exec_always --no-startup-id copyq
-exec_always --no-startup-id copyq show
-exec_always --no-startup-id arandr ~/.screenlayout/default.sh
+exec_always --no-startup-id dunst
+exec_always --no-startup-id greenclip daemon
+exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-# exec_always fluxgui
+exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 
 # Theme colors
 # client.focused #EAD49B #1E272B #EAD49B #9D6A47 #9D6A47
@@ -306,7 +300,6 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 exec --no-startup-id xmodmap /home/anonimito/.capsEsc
 exec --no-startup-id hsetroot -solid "#FFFFFF"
 exec --no-startup-id /home/anonimito/.dropbox-dist/dropboxd
-exec_always bash -c 'sleep 5 && --no-startup-id /home/anonimito/foss/activitywatch/aw-qt'
 
 ## Volume control
 
@@ -359,6 +352,13 @@ bindsym $mod+v exec code
 bindsym $mod+c exec google-chrome
 bindsym $mod+e exec emacs
 bindsym $mod+n exec ~/.emacs_anywhere/bin/run
+bindsym $mod+z exec 1password
+bindsym Print exec flameshot gui
+bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+for_window [class="copyq"] move container to scratchpad
+for_window [class="pentablet"] move container to scratchpad
+# for_window [class="Shutter"] move container to scratchpad
 
 # Multi-screen screenshots with scrot
 bindsym --release Shift+Print exec scrot --select 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
