@@ -180,9 +180,3 @@ export PATH=~/.cargo/bin:$PATH
 
 export PATH="$PATH:/opt/mssql-tools/bin"
 [ -f "/home/anonimito/.ghcup/env" ] && source "/home/anonimito/.ghcup/env" # ghcup-env
-
-#================
-# 1Password
-#================
-# Completion
-source <(op completion bash)
