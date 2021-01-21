@@ -2,6 +2,7 @@
   "segments": [
     "newline",
     "username",
+    "ssh",
     "hostname",
     "cwd",
     "git",
