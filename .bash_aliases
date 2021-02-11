@@ -1,42 +1,22 @@
-# ls
+# Filesystem
 alias ll='exa -l'
 alias la='exa -la'
 alias lt='exa -lT'
 alias lg='exa -lT --git'
-alias l='ls -CF'
 
-alias _shd='shutdown -h now'
-
-# commonly used tools
 alias fs="thunar ."
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias t=tmux
-alias g=grep
-alias ht=htop
-alias h='hoogle --count=5'
-alias v=vim
-alias a=atril
-alias s=source
-alias c=clear
-alias scrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
-alias lg=lazygit
 
-# haskell
+# Haskell
 alias ghci-auto="ghcid '--command=stack ghci' --test=main"
+alias h='hoogle --count=5'
 
-# books I'm currently reading
-alias lyahftgg="atril ~/programming-misc/books/haskell/lyahftgg.pdf"
-
-# kubernetes
+# Kubernetes
 alias k=kubectl
 alias kns=kubens
 
+# Database clients
 alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
 
-# Projects
-alias comfykafka="node ~/work/open-source/clojure/comfykafka/target/js/compiled/comfykafka.js"
-alias cd-to-tung-frontend="cd ~/work/pegleg/clojure/tung-frontend"
-
-# Make i3lock black
-alias i3lock="i3lock -c 000000"
-
+# Misc
+alias i3lock="i3lock -c 000000" # Make i3lock black
