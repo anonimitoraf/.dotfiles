@@ -1,2 +1,3 @@
 .tmux/resurrect/last
 .tmux/resurrect/*.txt
+.clj-kondo

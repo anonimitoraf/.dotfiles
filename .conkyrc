@@ -34,23 +34,10 @@ conky.config = {
 
 };
 
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu0}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu1}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu2}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu3}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu4}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu5}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu6}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu7}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu8}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu9}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu10}%" , "color": "\#B7E0E2" },
-    -- { "full_text": "${font FontAwesome:size=10} ${cpu cpu11}%" , "color": "\#B7E0E2" },
-
 conky.text = [[
 [
 
-    { "full_text": "${font FontAwesome:size=10}🎧 ${execi 30 'headsetcontrol -b || echo -1'}%" , "color": "\#B7E0E2" },
+    { "full_text": "${font FontAwesome:size=10}🎧 ${execi 5 bb ~/.dotfiles/scripts/headset_battery.clj | sed 's/\"//g'}" , "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10}  $mem" , "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10} ${downspeedf wlx30b49eab534b} KB/s" , "color": "\#B7E0E2" },
     { "full_text": "${font FontAwesome:size=10} ${upspeedf wlx30b49eab534b} KB/s" , "color": "\#B7E0E2" },
