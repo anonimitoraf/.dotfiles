@@ -18,5 +18,8 @@ alias kns=kubens
 # Database clients
 alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
 
+# Editors
+alias vim="emacsclient -c -a vim"
+
 # Misc
 alias i3lock="i3lock -c 000000" # Make i3lock black
