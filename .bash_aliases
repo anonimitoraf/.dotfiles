@@ -6,6 +6,7 @@ alias lg='exa -lT --git'
 
 alias fs="thunar ."
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias d='bash ~/.dotfiles/scripts/dired.sh'
 
 # Haskell
 alias ghci-auto="ghcid '--command=stack ghci' --test=main"
