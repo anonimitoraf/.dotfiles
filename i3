@@ -29,8 +29,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Window kill command
 bindsym $mod+Shift+q kill
 
-# start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+# start and show program launcher
+bindsym $mod+d exec --no-startup-id rofi -rnow -run-command "bash -i -c '{cmd}'" -show run
 
 # change focus
 bindsym $mod+h focus left
