@@ -29,8 +29,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Window kill command
 bindsym $mod+Shift+q kill
 
-# start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+# start and show program launcher
+bindsym $mod+d exec --no-startup-id rofi -rnow -run-command "bash -i -c '{cmd}'" -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -357,9 +357,6 @@ bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard
 for_window [class="copyq"] move container to scratchpad
 for_window [class="pentablet"] move container to scratchpad
 # for_window [class="Shutter"] move container to scratchpad
-
-# Multi-screen screenshots with scrot
-bindsym --release Shift+Print exec scrot --select 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
