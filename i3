@@ -233,12 +233,10 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 
 # Theme colors
-# client.focused #EAD49B #1E272B #EAD49B #9D6A47 #9D6A47
-client.focused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-# client.unfocused #EAD49B #1E272B #EAD49B #78824B #78824B
-client.urgent #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.focused          #20c20e #1f1f1f #c6c6c6 #20c20e #20c20e
+client.focused_inactive #8abeb7 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.urgent           #b30000 #1f1f1f #c6c6c6 #b30000 #b30000
+client.placeholder      #c6c6c6 #1f1f1f #c6c6c6 #c6c6c6 #c6c6c6
 
 # client.background #1E272B
 
