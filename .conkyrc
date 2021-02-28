@@ -37,11 +37,11 @@ conky.config = {
 conky.text = [[
 [
 
-    { "full_text": "${font FontAwesome:size=10}🎧 ${execi 5 bb ~/.dotfiles/scripts/headset_battery.clj | sed 's/\"//g'}" , "color": "\#20C20E" },
-    { "full_text": "${font FontAwesome:size=10}  $mem" , "color": "\#20C20E" },
-    { "full_text": "${font FontAwesome:size=10} ${downspeedf wlx30b49eab534b} KB/s" , "color": "\#20C20E" },
-    { "full_text": "${font FontAwesome:size=10} ${upspeedf wlx30b49eab534b} KB/s" , "color": "\#20C20E" },
-    { "full_text": "Battery ${battery_percent BAT0}%", "color": "\#20C20E" },
-    { "full_text": "${font FontAwesome:size=10} ${time %d/%m - %R} " , "color": ${if_match ${memperc}<90}"\#20C20E"${else}"\#B7E0E2"${endif} }
+    { "full_text": "${font FontAwesome:size=10}🎧 ${execi 5 bb ~/.dotfiles/scripts/headset_battery.clj | sed 's/\"//g'}" , "color": "\#ffffff" },
+    { "full_text": "${font FontAwesome:size=10}  $mem" , "color": "\#ffffff" },
+    { "full_text": "${font FontAwesome:size=10} ${downspeedf wlx30b49eab534b} KB/s" , "color": "\#ffffff" },
+    { "full_text": "${font FontAwesome:size=10} ${upspeedf wlx30b49eab534b} KB/s" , "color": "\#ffffff" },
+    { "full_text": "Battery ${battery_percent BAT0}%", "color": "\#ffffff" },
+    { "full_text": "${font FontAwesome:size=10} ${time %d/%m - %R} " , "color": ${if_match ${memperc}<90}"\#ffffff"${else}"\#ffffff"${endif} }
 ],
 ]];
