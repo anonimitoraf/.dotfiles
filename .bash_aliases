@@ -13,6 +13,9 @@ alias d=dired
 alias ghci-auto="ghcid '--command=stack ghci' --test=main"
 alias h='hoogle --count=5'
 
+# Clojure
+alias comfykafka="node ~/work/open-source/clojure/comfykafka/target/js/compiled/comfykafka.js"
+
 # Kubernetes
 alias k=kubectl
 alias kns=kubens
