@@ -24,7 +24,7 @@ for_window [class="copyq"] title_format "<tt></tt><span foreground='#ffffff'> ïŒ
 
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # Window kill command
 bindsym $mod+Shift+q kill
