@@ -1,16 +1,13 @@
 {
   "segments": [
-    "newline",
     "username",
     "ssh",
     "hostname",
     "cwd",
     "git",
     "newline",
-    "time",
     "root"
   ],
-  "mode": "flat",
   "cwd": {
     "full_cwd": true
   },
