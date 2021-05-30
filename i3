@@ -231,6 +231,7 @@ exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
+exec_always --no-startup-id xfce4-clipman
 
 # Theme colors
 # class                 border  backgr. text    indicator   child_border
@@ -352,7 +353,8 @@ bindsym $mod+c exec google-chrome
 bindsym $mod+e exec emacs
 bindsym $mod+n exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec 1password
-bindsym Print exec flameshot gui
+# bindsym Print exec flameshot gui
+bindsym Print exec xfce4-screenshooter --region --clipboard
 bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 for_window [class="copyq"] move container to scratchpad
