@@ -186,3 +186,6 @@ PERL5LIB="/home/anonimito/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL
 PERL_LOCAL_LIB_ROOT="/home/anonimito/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/anonimito/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/anonimito/perl5"; export PERL_MM_OPT;
+
+# Erlang
+source /home/anonimito/.evm/scripts/evm
