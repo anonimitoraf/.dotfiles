@@ -49,7 +49,7 @@ memory {
 }
 
 tztime local {
-  format = "  %H:%M:%S   %Y %m %d"
+  format = "  %H:%M:%S   %Y %b %d"
 }
 
 cpu_usage {
