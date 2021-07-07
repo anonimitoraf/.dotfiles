@@ -10,4 +10,6 @@ sudo ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 
 mkdir -p ~/.config/i3status
 sudo ln -sf ~/.dotfiles/i3status ~/.config/i3status/config
+
+sudo ln -sf ~/.dotfiles/erlang_ls.config ~/.config/erlang_ls/erlang_ls.config
 ```
