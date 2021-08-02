@@ -25,6 +25,7 @@ for_window [class="copyq"] title_format "<tt></tt><span foreground='#ffffff'> ïŒ
 floating_modifier $mod
 
 bindsym $mod+Return exec alacritty
+bindsym $mod+backslash exec xfce4-terminal
 
 # Window kill command
 bindsym $mod+Shift+q kill
