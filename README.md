@@ -12,4 +12,7 @@ mkdir -p ~/.config/i3status
 sudo ln -sf ~/.dotfiles/i3status ~/.config/i3status/config
 
 sudo ln -sf ~/.dotfiles/erlang_ls.config ~/.config/erlang_ls/erlang_ls.config
+
+mkdir -p ~/.lsp
+sudo ln -sf ~/.dotfiles/clojure-lsp-config.edn ~/.lsp/config.edn
 ```
