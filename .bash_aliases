@@ -21,7 +21,7 @@ alias k=kubectl
 alias kns=kubens
 
 # Database clients
-alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
+# alias medis="pushd ~/work/open-source/js/medis && npm run start && popd"
 
 # Editors
 alias vim="emacsclient -c -a vim"
