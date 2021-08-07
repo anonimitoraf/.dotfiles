@@ -378,7 +378,4 @@ bindsym Mod1+Alt_L mode "passthrough"
 
 bar {
   status_command i3status
-  mode hide
-  hidden_state hide
-  modifier Mod4
 }
