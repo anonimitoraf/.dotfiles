@@ -1,4 +1,6 @@
 ``` shell
+sudo ln -sf ~/.dotfiles/scripts ~/scripts
+
 sudo ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 sudo ln -sf ~/.dotfiles/.capsEsc ~/.capsEsc
 sudo ln -sf ~/.dotfiles/.inputrc ~/.inputrc

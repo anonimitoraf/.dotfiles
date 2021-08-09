@@ -230,6 +230,7 @@ mode "resize" {
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
+exec --no-startup-id bash ~/scripts/tmux-resurrect.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id ~/.screenlayout/default.sh
