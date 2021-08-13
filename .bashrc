@@ -190,17 +190,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/anonimito/perl5"; export PERL_MM_OPT;
 # Erlang
 source /home/anonimito/.evm/scripts/evm
 
-# ssh-agent "hack"
-# See https://yashagarwal.in/posts/2017/12/setting-up-ssh-agent-in-i3/#setting-up-bashrc
-if [ -f ~/.ssh/agent.env ] ; then
-    . ~/.ssh/agent.env > /dev/null
-    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-        echo "Stale agent file found. Spawning a new agent. "
-        eval `ssh-agent | tee ~/.ssh/agent.env`
-        ssh-add
-    fi
-else
-    echo "Starting ssh-agent"
-    eval `ssh-agent | tee ~/.ssh/agent.env`
-    ssh-add
-fi
+# See https://stackoverflow.com/a/42165501
+# keychain manages ssh-agents
+type keychain >&/dev/null && keychain -q --agents ssh >&/dev/null
+[ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
