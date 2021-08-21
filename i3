@@ -355,8 +355,7 @@ bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to sw
 
 # custom shortcuts
 bindsym $mod+v exec code
-bindsym $mod+c exec google-chrome
-bindsym $mod+e exec emacs
+bindsym $mod+c exec google-chrome --remote-debugging-port=9222
 bindsym $mod+n exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec 1password
 bindsym Print exec flameshot gui
@@ -366,6 +365,9 @@ bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard
 for_window [class="copyq"] move container to scratchpad
 for_window [class="pentablet"] move container to scratchpad
 # for_window [class="Shutter"] move container to scratchpad
+
+# Focusing particular windows/containers
+bindsym $mod+e [class="Emacs"] focus
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
