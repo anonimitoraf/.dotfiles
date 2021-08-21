@@ -1,2 +1,3 @@
 {:hover {:hide-file-location? true}
- :show-docs-arity-on-same-line? false}
+ :show-docs-arity-on-same-line? false
+ :notify-references-on-file-change true}
