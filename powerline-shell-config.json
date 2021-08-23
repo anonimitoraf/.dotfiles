@@ -16,5 +16,6 @@
   },
   "time": {
     "format": "%a %-d %b - %H:%M"
-  }
+  },
+  "mode": "flat"
 }
