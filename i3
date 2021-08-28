@@ -238,6 +238,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 exec_always --no-startup-id xfce4-clipman
+exec_always --no-startup-id xsetroot -solid "#242424"
 
 # Theme colors
 # class                 border  backgr. text    indicator   child_border
