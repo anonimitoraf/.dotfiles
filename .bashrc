@@ -194,3 +194,9 @@ source /home/anonimito/.evm/scripts/evm
 # keychain manages ssh-agents
 type keychain >&/dev/null && keychain -q --agents ssh >&/dev/null
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
+
+# Guix
+export PATH="$PATH:~/.guix-profile/bin"
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+export GUIX_PROFILE="/home/anonimito/.guix-profile"
+. "${GUIX_PROFILE}/etc/profile"

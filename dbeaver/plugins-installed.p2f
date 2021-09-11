@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?p2f version='1.0.0'?>
+<p2f version='1.0.0'>
+  <ius size='6'>
+    <iu id='com.github.eclipsecolortheme.feature.feature.group' name='Eclipse Color Theme' version='1.0.0.201410260308'>
+      <repositories size='1'>
+        <repository location='http://eclipse-color-theme.github.io/update/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.epp.mpc.feature.group' name='Marketplace Client' version='1.9.0.v20210108-0835'>
+      <repositories size='2'>
+        <repository location='https://download.eclipse.org/releases/2021-03/'/>
+        <repository location='http://download.eclipse.org/mpc/releases/1.9.0'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.feature.group' name='Vrapper' version='0.74.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.plugin.surround.feature.group' name='Vrapper - Surround.vim Plugin (Optional)' version='0.74.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.plugin.linetextobj.feature.group' name='Vrapper - textobj-line.vim Plugin (Optional)' version='0.74.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.plugin.indenttextobj.feature.group' name='Vrapper - vim-indent-object.vim Plugin (Optional)' version='0.74.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+  </ius>
+</p2f>

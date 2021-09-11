@@ -1,0 +1,7 @@
+#Tue Sep 07 01:21:04 AEST 2021
+\!/=
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="kg.totality.core.insert_mode"/>\n</org.eclipse.ui.commands>
+/instance/org.eclipse.ui/KEY_CONFIGURATION_ID=kg.totality.core.insert_mode
+@org.eclipse.ui=3.119.0.v20210111-1350
+@org.eclipse.ui.workbench=3.122.100.v20210215-1525
+file_export_version=3.0
