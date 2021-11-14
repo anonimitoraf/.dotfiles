@@ -31,4 +31,4 @@ alias outlook="google-chrome --profile-directory=Default --app-id=pkooggnaalmfki
 
 # Misc
 alias i3lock="i3lock -c 000000" # Make i3lock black
-alias dbeaver-custom="dbeaver -vmargs -Xmx8192m"
+alias dbeaver-custom="sudo dbeaver-ce -vmargs -Xmx8192m"
