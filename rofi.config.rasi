@@ -1,0 +1,12 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+  kb-remove-to-eol:   "";
+  kb-mode-complete:   "";
+  kb-accept-entry:    "Control+l,Return";
+  kb-row-up:          "Control+k,Up,Control+p,ISO_Left_Tab";
+  kb-row-down:        "Control+j,Down,Control+n";
+}
+@import "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

@@ -12,6 +12,9 @@ sudo ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 sudo ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
 
+mkdir -p ~/.config/rofi
+sudo ln -s ~/.dotfiles/rofi.config.rasi ~/.config/rofi/config.rasi
+
 mkdir -p ~/.config/i3status
 sudo ln -sf ~/.dotfiles/i3status ~/.config/i3status/config
 
