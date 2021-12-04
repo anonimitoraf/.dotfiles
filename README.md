@@ -11,6 +11,7 @@ sudo ln -sf ~/.dotfiles/greenclip.cfg ~/.config/greenclip.cfg
 sudo ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 sudo ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
+sudo ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 mkdir -p ~/.config/rofi
 sudo ln -s ~/.dotfiles/rofi.config.rasi ~/.config/rofi/config.rasi
