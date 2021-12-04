@@ -25,6 +25,7 @@ alias kns=kubens
 
 # Editors
 alias vim="emacsclient -c -a vim"
+alias emacs-ssh="TERM=xterm-24bit emacs -nw"
 
 # Chrome "apps"
 alias outlook="google-chrome --profile-directory=Default --app-id=pkooggnaalmfkidjmlhoelhdllpphaga"
