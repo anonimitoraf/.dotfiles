@@ -12,6 +12,7 @@ __powerline() {
     COLOR_GIT=${COLOR_GIT:-'\[\033[0;36m\]'} # cyan
     COLOR_SUCCESS=${COLOR_SUCCESS:-'\[\033[0;32m\]'} # green
     COLOR_FAILURE=${COLOR_FAILURE:-'\[\033[0;31m\]'} # red
+    COLOR_SSH=${COLOR_SSH:-'\[\033[0;35m\]'} # bright red
 
     # Symbols
     SYMBOL_GIT_BRANCH=${SYMBOL_GIT_BRANCH:-⑃}
@@ -62,6 +63,12 @@ __powerline() {
         printf " $ref$marks"
     }
 
+    __ssh_info() {
+      if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        printf "${COLOR_SSH}ssh${COLOR_RESET} "
+      fi
+    }
+
     ps1() {
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
@@ -85,7 +92,10 @@ __powerline() {
             local git="$COLOR_GIT$(__git_info)$COLOR_RESET"
         fi
 
-        PS1="$cwd$git$symbol"
+        # SSH
+        local ssh="$(__ssh_info)"
+
+        PS1=" $ssh$cwd$git$symbol"
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
