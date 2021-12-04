@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Filesystem
 alias ll='exa -l'
 alias la='exa -la'
