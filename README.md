@@ -1,5 +1,5 @@
 ```shell
-git clone --recurse-submodules ~/.dotfiles
+git clone git@github.com:anonimitoraf/dotfiles.git --recurse-submodules ~/.dotfiles
 ```
 
 
