@@ -189,7 +189,7 @@ PERL_MB_OPT="--install_base \"/home/anonimito/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/anonimito/perl5"; export PERL_MM_OPT;
 
 # Erlang
-source /home/anonimito/.evm/scripts/evm
+[ -f "${HOME}/.evm/scripts/evm" ] && source "${HOME}/.evm/scripts/evm"
 
 # See https://stackoverflow.com/a/42165501
 # keychain manages ssh-agents
@@ -197,7 +197,10 @@ type keychain >&/dev/null && keychain -q --agents ssh >&/dev/null
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh
 
 # Guix
-export PATH="$PATH:~/.guix-profile/bin"
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-export GUIX_PROFILE="/home/anonimito/.guix-profile"
-. "${GUIX_PROFILE}/etc/profile"
+if [ -d "${HOME}/.guix-profile" ]
+then
+  export PATH="$PATH:~/.guix-profile/bin"
+  export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+  export GUIX_PROFILE="/home/anonimito/.guix-profile"
+  . "${GUIX_PROFILE}/etc/profile"
+fi
