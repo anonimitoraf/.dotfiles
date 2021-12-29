@@ -1,3 +1,8 @@
+```shell
+git clone --recurse-submodules ~/.dotfiles
+```
+
+
 ``` shell
 sudo ln -sf ~/.dotfiles/scripts ~/scripts
 
