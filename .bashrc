@@ -129,22 +129,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# start shell as tmux with 2 windows (focus in first window)
-#if [[ ! $TERM =~ screen ]]; then
-    #exec tmux new-session \; split-window -h \; select-pane -L \; attach
-#fi
-
-#================
-# powerline 
-#================
-# function _update_ps1() {
-#     PS1=$(powerline-shell $?)
-# }
-
-# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-# fi
-source ~/.bash-powerline.sh
+[ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
 
 #================
 # term color 
