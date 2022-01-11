@@ -50,11 +50,11 @@ memory {
 }
 
 tztime local {
-  format = "  %H:%M:%S %b %d"
+  format = "  %A %H:%M:%S %b %d"
 }
 
 tztime utc {
-  format = "  %H:%M:%S %b %d"
+  format = "  %A %H:%M:%S %b %d"
   timezone = "Etc/UTC"
 }
 
