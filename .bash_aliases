@@ -35,3 +35,6 @@ alias outlook="google-chrome --profile-directory=Default --app-id=pkooggnaalmfki
 # Misc
 alias i3lock="i3lock -c 000000" # Make i3lock black
 alias dbeaver-custom="sudo dbeaver-ce -vmargs -Xmx8192m"
+alias google-chrome="google-chrome-stable"
+alias color-picker="cd ~/work/open-source/ColourPicker && python3 -m pick"
+alias nord="nordvpn"
