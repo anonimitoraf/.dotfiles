@@ -15,7 +15,8 @@ sudo ln -sf ~/.dotfiles/powerline-shell-config.json ~/.config/powerline-shell/co
 sudo ln -sf ~/.dotfiles/greenclip.cfg ~/.config/greenclip.cfg
 sudo ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 sudo ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
-sudo ln -s ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
+sudo ln -sf ~/.dotfiles/.tmux ~/.tmux
+sudo ln -sf ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
 sudo ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 mkdir -p ~/.config/rofi
