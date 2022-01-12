@@ -365,6 +365,7 @@ bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard
 
 for_window [class="copyq"] move container to scratchpad
 for_window [class="pentablet"] move container to scratchpad
+for_window [class="bitwarden-desktop"] move container to scratchpad
 # for_window [class="Shutter"] move container to scratchpad
 
 # Focusing particular windows/containers
