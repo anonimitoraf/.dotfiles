@@ -189,3 +189,6 @@ then
   export GUIX_PROFILE="/home/anonimito/.guix-profile"
   . "${GUIX_PROFILE}/etc/profile"
 fi
+
+# Emacs
+export LSP_USE_PLISTS=true
