@@ -151,7 +151,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export NVS_HOME="$HOME/.nvs"
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+# [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
 
 #kubectx and kubens
@@ -193,12 +193,11 @@ fi
 # Emacs
 export LSP_USE_PLISTS=true
 
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
 if command -v hstr &> /dev/null
 then
-    # BEGIN_KITTY_SHELL_INTEGRATION
-    if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
-    # END_KITTY_SHELL_INTEGRATION
-
     # HSTR configuration - add this to ~/.bashrc
     alias hh=hstr                    # hh to be alias for hstr
     export HSTR_CONFIG=hicolor       # get more colors
