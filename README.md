@@ -29,4 +29,10 @@ sudo ln -sf ~/.dotfiles/erlang_ls.config ~/.config/erlang_ls/erlang_ls.config
 
 mkdir -p ~/.lsp
 sudo ln -sf ~/.dotfiles/clojure-lsp-config.edn ~/.lsp/config.edn
+
+mkdir -p ~/.config/yabai
+sudo ln -sf ~/.dotfiles/yabairc ~/.config/yabai/yabairc
+
+mkdir -p ~/.config/skhd
+sudo ln -sf ~/.dotfiles/skhdrc ~/.config/skhd/skhdrc
 ```
