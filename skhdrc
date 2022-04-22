@@ -58,4 +58,4 @@ shift + cmd - space : yabai -m window --toggle float
 cmd - f         : yabai -m window --toggle zoom-fullscreen
 
 # Kill a container
-shift + alt - q : yabai -m window --close
+shift + cmd - q : yabai -m window --close
