@@ -151,7 +151,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export NVS_HOME="$HOME/.nvs"
-# [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
 
 #kubectx and kubens
