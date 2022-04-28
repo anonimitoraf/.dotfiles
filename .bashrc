@@ -238,3 +238,6 @@ then
 
     bind '"\C-r": "\e^ihstr -- \n"'
 fi
+
+# Chemacs
+export PATH=~/.emacs.default/bin:$PATH
