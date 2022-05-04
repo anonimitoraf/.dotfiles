@@ -46,6 +46,12 @@ __powerline() {
 
         [[ -n "$ref" ]] || return  # not a git repo
 
+        # Trim ultra-long git branch names
+        ref_len=${#ref}
+        if [[ ${ref_len} -gt 24 ]]; then
+            ref=$(printf "${ref}" | head -c 24 | awk '{print $1"..."}')
+        fi
+
         local marks
 
         # scan first two lines of output from `git status`
