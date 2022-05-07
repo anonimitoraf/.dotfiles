@@ -64,4 +64,4 @@ shift + cmd - f : yabai -m window --toggle native-fullscreen
 # Kill a container
 shift + cmd - q : yabai -m window --close
 
-shift + ctrl - q : emacsclient --eval "(clippo-yabai $(yabai -m query --windows --window | jq .id))"
+shift + ctrl - q : emacsclient --eval "(clippo)"
