@@ -46,6 +46,8 @@ __powerline() {
 
         [[ -n "$ref" ]] || return  # not a git repo
 
+        ref="${ref:0:24}"
+
         local marks
 
         # scan first two lines of output from `git status`
