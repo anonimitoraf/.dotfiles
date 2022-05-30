@@ -129,8 +129,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
-
 #================
 # term color 
 #================
@@ -210,12 +208,16 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
         vterm_printf "51;Evterm-clear-scrollback";
         tput clear;
     }
+    vterm_prompt_end(){
+        vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+    }
+    PS1=$PS1'\[$(vterm_prompt_end)\]'
+    ps1() {
+      PS1=$PS1
+    }
+else
+  [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
 fi
-
-vterm_prompt_end(){
-    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
-}
-PS1=$PS1'\[$(vterm_prompt_end)\]'
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
@@ -241,3 +243,5 @@ fi
 
 # Chemacs
 export PATH=~/.emacs.default/bin:$PATH
+
+export PROMPT_DIRTRIM=1
