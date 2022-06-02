@@ -35,4 +35,6 @@ sudo ln -sf ~/.dotfiles/yabairc ~/.config/yabai/yabairc
 
 mkdir -p ~/.config/skhd
 sudo ln -sf ~/.dotfiles/skhdrc ~/.config/skhd/skhdrc
+
+sudo ln -sf ~/.dotfiles/z.sh ~/z.sh
 ```

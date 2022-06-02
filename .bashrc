@@ -245,3 +245,5 @@ fi
 export PATH=~/.emacs.default/bin:$PATH
 
 export PROMPT_DIRTRIM=1
+
+. "${HOME}/z.sh"
