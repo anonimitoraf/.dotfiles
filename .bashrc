@@ -217,6 +217,8 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     }
 else
   [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
+
+  source "${HOME}/z.sh"
 fi
 
 # BEGIN_KITTY_SHELL_INTEGRATION
@@ -245,5 +247,3 @@ fi
 export PATH=~/.emacs.default/bin:$PATH
 
 export PROMPT_DIRTRIM=1
-
-. "${HOME}/z.sh"
