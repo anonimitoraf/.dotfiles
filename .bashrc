@@ -191,6 +191,8 @@ fi
 # Emacs
 export LSP_USE_PLISTS=true
 
+export PROMPT_COMMAND=""
+
 vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
         # Tell tmux to pass the escape sequences through
@@ -217,33 +219,16 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     }
 else
   [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
-
-  source "${HOME}/z.sh"
 fi
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
-if command -v hstr &> /dev/null
-then
-    # HSTR configuration - add this to ~/.bashrc
-    alias hh=hstr                    # hh to be alias for hstr
-    export HSTR_CONFIG=hicolor       # get more colors
-    shopt -s histappend              # append new history items to .bash_history
-    export HISTCONTROL=ignorespace   # leading space hides commands from history
-    export HISTFILESIZE=10000        # increase history file size (default is 500)
-    export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-    # ensure synchronization between bash memory and history file
-    export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
-    # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
-    if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
-    # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
-    if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
-
-    bind '"\C-r": "\e^ihstr -- \n"'
-fi
 
 # Chemacs
 export PATH=~/.emacs.default/bin:$PATH
 
 export PROMPT_DIRTRIM=1
+
+# Autojump
+[[ -s "${HOME}/.autojump/etc/profile.d/autojump.sh" ]] && source "${HOME}/.autojump/etc/profile.d/autojump.sh"
