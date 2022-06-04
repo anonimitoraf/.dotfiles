@@ -7,3 +7,8 @@ set vi-cmd-mode-string \1\e[2 q\2
 
 # Ctrl-Backspace to delete a word
 "\C-h": shell-backward-kill-word
+
+"\C-r": history-search-backward
+"\C-t": history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on
