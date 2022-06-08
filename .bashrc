@@ -143,9 +143,14 @@ fi
 #================
 # android
 #================
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+if [ "$(uname)" == "Darwin" ]; then
+    export ANDROID_HOME=~/Library/Android/sdk
+    export PATH=~/Library/Android/sdk/platform-tools:$PATH
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    export ANDROID_HOME=~/Android/Sdk
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+fi
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export NVS_HOME="$HOME/.nvs"
@@ -231,4 +236,7 @@ export PATH=~/.emacs.default/bin:$PATH
 export PROMPT_DIRTRIM=1
 
 # Autojump
+# Linux
 [[ -s "${HOME}/.autojump/etc/profile.d/autojump.sh" ]] && source "${HOME}/.autojump/etc/profile.d/autojump.sh"
+# Mac
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
