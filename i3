@@ -361,14 +361,14 @@ bindsym $mod+n exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec 1password
 bindsym Print exec flameshot gui
 # bindsym Print exec xfce4-screenshooter --region --clipboard
-# bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-bindsym Ctrl+Shift+q exec emacsclient --eval "(clippo)"
+bindsym Ctrl+Shift+q exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+# bindsym Ctrl+Shift+q exec emacsclient --eval "(clippo)"
 
 for_window [class="copyq"] move container to scratchpad
 for_window [class="pentablet"] move container to scratchpad
 for_window [class="bitwarden-desktop"] move container to scratchpad
 # for_window [class="Shutter"] move container to scratchpad
-for_window [title="^emacs-clippo.*"] floating enable
+for_window [title="^emacs-clippo.*" class="Emacs"] floating enable
 
 # Focusing particular windows/containers
 bindsym $mod+e [class="Emacs"] focus
