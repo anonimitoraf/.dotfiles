@@ -175,28 +175,66 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (XTerm)
+# colors:
+#   primary:
+#     background: "#000000"
+#     foreground: "#ffffff"
+#   normal:
+#     black: "#000000"
+#     red: "#cd0000"
+#     green: "#00cd00"
+#     yellow: "#cdcd00"
+#     blue: "#0000ee"
+#     magenta: "#cd00cd"
+#     cyan: "#00cdcd"
+#     white: "#e5e5e5"
+#   bright:
+#     black: "#7f7f7f"
+#     red: "#ff0000"
+#     green: "#00ff00"
+#     yellow: "#ffff00"
+#     blue: "#5c5cff"
+#     magenta: "#ff00ff"
+#     cyan: "#00ffff"
+#     white: "#ffffff"
+# Colors (SeaShells)
+# Source : https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/SeaShells.itermcolors
 colors:
+  # Default colors
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
+    background: '#061923'
+    foreground: '#e5c49e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#061822'
+    cursor: '#feaf3c'
+
+  selection:
+    text: '#ffe9d7'
+    background: '#265b75'
+
+  # Normal colors
   normal:
-    black: "#000000"
-    red: "#cd0000"
-    green: "#00cd00"
-    yellow: "#cdcd00"
-    blue: "#0000ee"
-    magenta: "#cd00cd"
-    cyan: "#00cdcd"
-    white: "#e5e5e5"
+    black: '#1d485f'
+    red: '#db662d'
+    green: '#008eab'
+    yellow: '#feaf3c'
+    blue: '#255a62'
+    magenta: '#77dbf4'
+    cyan: '#5fb1c2'
+    white: '#e5c49e'
+
+  # Bright colors
   bright:
-    black: "#7f7f7f"
-    red: "#ff0000"
-    green: "#00ff00"
-    yellow: "#ffff00"
-    blue: "#5c5cff"
-    magenta: "#ff00ff"
-    cyan: "#00ffff"
-    white: "#ffffff"
+    black: '#545d65'
+    red: '#dd998a'
+    green: '#739da8'
+    yellow: '#fedaae'
+    blue: '#0bc7e3'
+    magenta: '#c6e8f1'
+    cyan: '#97b9c0'
+    white: '#ffe9d7'
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
