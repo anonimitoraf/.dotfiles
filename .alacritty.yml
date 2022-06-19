@@ -28,9 +28,9 @@ window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 160
+    lines: 40
 
   # Window position (changes require restart)
   #
@@ -60,7 +60,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -606,7 +606,7 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -715,6 +715,7 @@ colors:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward    }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward   }
+  - { key: F,          mods: Command,                    action: ToggleSimpleFullscreen }
 
 #debug:
   # Display the time it takes to redraw each frame.
