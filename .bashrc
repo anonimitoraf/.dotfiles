@@ -222,9 +222,8 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     ps1() {
       PS1=$PS1
     }
-else
-  [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
 fi
+[ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
