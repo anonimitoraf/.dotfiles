@@ -87,3 +87,24 @@ hs.hotkey.bind({'cmd'}, 'f', function()
   local win = hs.window.focusedWindow()
   win:maximize()
 end)
+
+-- Clipboard manager
+hs.hotkey.bind({'ctrl', 'shift'}, 'q', function()
+    local task = hs.task.new(
+      '/opt/homebrew/bin/emacsclient',
+      function(exitCode, stdout, stderr)
+        print("Clippo exit code:" .. exitCode)
+        print("Clippo stdout:" .. stdout)
+        print("Clippo stderr:" .. stderr)
+      end,
+      { '--eval', '(clippo)' }
+    )
+    task:start()
+end)
+
+-- Auto-focus emacsclient when created
+local wf=hs.window.filter
+local wf_emacs = wf.new{'Emacs'}
+wf_emacs:subscribe(wf.windowCreated, function(window)
+    window:focus()
+end)
