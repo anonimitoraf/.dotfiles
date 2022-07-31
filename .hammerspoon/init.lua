@@ -90,12 +90,11 @@ end)
 
 -- Clipboard manager
 hs.hotkey.bind({'ctrl', 'shift'}, 'q', function()
+    local winBefore = hs.window.focusedWindow()
     local task = hs.task.new(
       '/opt/homebrew/bin/emacsclient',
       function(exitCode, stdout, stderr)
-        print("Clippo exit code:" .. exitCode)
-        print("Clippo stdout:" .. stdout)
-        print("Clippo stderr:" .. stderr)
+        winBefore:focus()
       end,
       { '--eval', '(clippo)' }
     )
