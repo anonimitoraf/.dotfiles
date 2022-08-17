@@ -36,6 +36,7 @@ hs.hotkey.bind({'command'}, 'return', function ()
   end
   local alacritty = hs.application.get(APP_NAME)
   if alacritty ~= nil and alacritty:isFrontmost() then
+    print("Hiding alacritty")
     alacritty:hide()
   else
     -- local space = spaces.activeSpace()
@@ -60,14 +61,6 @@ hs.hotkey.bind({'command'}, 'return', function ()
     if alacritty ~= nil then
       moveWindow(alacritty, space, mainScreen)
     end
-  end
-end)
-
--- Hide alacritty if not in focus
-hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
-  local alacritty = hs.application.get('Alacritty')
-  if alacritty ~= nil then
-     alacritty:hide()
   end
 end)
 
