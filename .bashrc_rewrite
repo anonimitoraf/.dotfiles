@@ -42,6 +42,10 @@ type keychain >&/dev/null && keychain -q --agents ssh >&/dev/null
 # JS
 export NVS_HOME="$HOME/.nvs"
 [ -s "${NVS_HOME}/nvs.sh" ] && . "${NVS_HOME}/nvs.sh" > /dev/null
+# Aliases, etc
+if [ -f ~/.bash_aliases ]; then . "${HOME}/.bash_aliases"; fi
+if [ -f ~/.bash_env_vars ]; then . "${HOME}/.bash_env_vars"; fi
+if [ -f ~/.bash_completions ]; then . "${HOME}/.bash_completions"; fi
 
 # --- Emacs shell-mode setup ---
 if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
@@ -52,9 +56,29 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
                   else if (NF>3) print $1 "/" $2 "/.../" $NF;
                   else print $1 "/.../" $NF; }
                   else print $0;}'"'"')'
-      PS1='\e[0;36m$(eval "echo ${PS1_INNER}") $ \e[m'
+      PS1='\e[0;33m$(eval "echo ${PS1_INNER}") $ \e[m'
     }
     # Don't do the rest of what's in this script
     # to make sure shell-mode doesn't lag
     return 0;
 fi;
+
+# --- Appearance ---
+[ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
+
+# --- History ---
+# HSTR configuration - add this to ~/.bashrc
+alias hh=hstr                    # hh to be alias for hstr
+export HSTR_CONFIG=hicolor       # get more colors
+shopt -s histappend              # append new history items to .bash_history
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+# ensure synchronization between bash memory and history file
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+# if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+bind '"\C-r": "\e^ihstr -- \n"'
+export HSTR_CONFIG=monochromatic,help-on-opposite-side,raw-history-view
