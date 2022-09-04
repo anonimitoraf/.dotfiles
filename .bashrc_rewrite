@@ -56,7 +56,7 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
                   else if (NF>3) print $1 "/" $2 "/.../" $NF;
                   else print $1 "/.../" $NF; }
                   else print $0;}'"'"')'
-      PS1='\e[0;33m$(eval "echo ${PS1_INNER}") $ \e[m'
+      PS1='$(eval "echo ${PS1_INNER}") $ '
     }
     # Don't do the rest of what's in this script
     # to make sure shell-mode doesn't lag
