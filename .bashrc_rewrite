@@ -56,7 +56,10 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
                   else if (NF>3) print $1 "/" $2 "/.../" $NF;
                   else print $1 "/.../" $NF; }
                   else print $0;}'"'"')'
-      PS1='$(eval "echo ${PS1_INNER}") $ '
+      PROMPT_COLOR='\e[1;33m'
+      DOLLAR_SIGN_COLOR='\e[1;35m'
+      COLOR_RESET='\033[0m'
+      PS1="${PROMPT_COLOR}${PS1_INNER} ${DOLLAR_SIGN_COLOR}\$${COLOR_RESET} "
     }
     # Don't do the rest of what's in this script
     # to make sure shell-mode doesn't lag
