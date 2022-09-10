@@ -11,6 +11,8 @@ export HISTSIZE=10000
 export HISTFILESIZE=2000000
 # Only show the last 3 directories
 export PROMPT_DIRTRIM=3
+# Make sure initial state is known
+export PROMPT_COMMAND=""
 
 # --- Set up paths ---
 # Base paths
