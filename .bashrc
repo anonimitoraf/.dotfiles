@@ -66,6 +66,7 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
       COLOR_RESET='\033[0m'
       PS1="${PROMPT_COLOR}${PS1_INNER} ${DOLLAR_SIGN_COLOR}\$${COLOR_RESET} "
     }
+    ps1;
     # Don't do the rest of what's in this script
     # to make sure shell-mode doesn't lag
     return 0;
