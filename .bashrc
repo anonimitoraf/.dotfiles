@@ -21,6 +21,7 @@ export PATH=~/.local/bin:$PATH
 if [ "$(uname)" == "Darwin" ]; then
     export ANDROID_HOME=~/Library/Android/sdk
     export PATH=~/Library/Android/sdk/platform-tools:$PATH
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     export ANDROID_HOME=~/Android/Sdk
     export PATH=$PATH:$ANDROID_HOME/tools
