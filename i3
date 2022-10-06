@@ -386,3 +386,5 @@ bindsym Mod1+Alt_L mode "passthrough"
 bar {
   status_command i3status
 }
+
+exec --no-startup-id setup_ngrok_ssh
