@@ -356,7 +356,7 @@ bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to sw
 
 # custom shortcuts
 bindsym $mod+v exec code
-bindsym $mod+c exec google-chrome-stable --remote-debugging-port=9222
+bindsym $mod+c exec firefox
 bindsym $mod+n exec emacsclient --eval "(emacs-everywhere)"
 bindsym $mod+z exec 1password
 bindsym Print exec flameshot gui
