@@ -29,6 +29,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 # Emacs bootloader
 export PATH=~/.emacs.default/bin:$PATH
+export PATH=~/.emacs.d/bin:$PATH
 # JS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
