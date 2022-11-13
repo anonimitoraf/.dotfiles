@@ -352,7 +352,7 @@ bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep -t $stat
 bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statussig
 
 # switching between windows
-bindsym $mod+Tab exec wmctrl -i -a $(wmctrl -l | dmenu -p "Choose a window to switch to: " -l 10 | cut -d " " -f1) 
+bindsym $mod+Tab exec rofi -show window
 
 # custom shortcuts
 bindsym $mod+v exec code
