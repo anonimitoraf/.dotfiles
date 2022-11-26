@@ -58,15 +58,11 @@ export LSP_USE_PLISTS=true
 if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
     ps1() {
       # Borrowed from
-      PS1_INNER='$(echo -n "${PWD/#$HOME/~}" | awk -F "/" '"'"'{
-                  if (length($0) > 14) { if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
-                  else if (NF>3) print $1 "/" $2 "/.../" $NF;
-                  else print $1 "/.../" $NF; }
-                  else print $0;}'"'"')'
+      CURRENT_DIR='\w'
       PROMPT_COLOR='\e[1;33m'
       DOLLAR_SIGN_COLOR='\e[1;35m'
       COLOR_RESET='\033[0m'
-      PS1="${PROMPT_COLOR}${PS1_INNER} ${DOLLAR_SIGN_COLOR}\$${COLOR_RESET} "
+      PS1="${PROMPT_COLOR}${CURRENT_DIR} ${DOLLAR_SIGN_COLOR}\n\$${COLOR_RESET} "
     }
     ps1;
     # Don't do the rest of what's in this script
