@@ -2,8 +2,10 @@
  :style          [:respect-nl :justified]
  :width          120
  :map            {:comma?  false
-                  :justify {:max-variance 64 :no-justify nil}}
- :binding        {:justify {:max-variance 64}}
+                  :justify {:max-variance 64
+                            :no-justify   nil}}
+ :binding        {:justify {:max-variance 64
+                            :no-justify   nil}}
  :pair           {:justify {:max-variance 32}}
  :fn-map         {"->"     :none
                   "->>"    :none
