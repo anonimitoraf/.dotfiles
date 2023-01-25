@@ -65,7 +65,7 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
       PROMPT_COLOR='\e[1;33m'
       DOLLAR_SIGN_COLOR='\e[1;35m'
       COLOR_RESET='\033[0m'
-      PS1="${PROMPT_COLOR}${CURRENT_DIR} ${DOLLAR_SIGN_COLOR}\n\$${COLOR_RESET} "
+      PS1="\n${PROMPT_COLOR}${CURRENT_DIR} ${DOLLAR_SIGN_COLOR} \$${COLOR_RESET} "
     }
     ps1;
     # Don't do the rest of what's in this script
