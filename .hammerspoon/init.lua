@@ -81,6 +81,13 @@ hs.hotkey.bind({'cmd'}, 'f', function()
   win:maximize()
 end)
 
+-- Auto-focus emacsclient when created
+local wf=hs.window.filter
+local wf_emacs = wf.new{'Emacs'}
+wf_emacs:subscribe(wf.windowCreated, function(window)
+    window:focus()
+end)
+
 -- Clipboard manager
 hs.hotkey.bind({'ctrl', 'shift'}, 'q', function()
     local winBefore = hs.window.focusedWindow()
@@ -94,9 +101,15 @@ hs.hotkey.bind({'ctrl', 'shift'}, 'q', function()
     task:start()
 end)
 
--- Auto-focus emacsclient when created
-local wf=hs.window.filter
-local wf_emacs = wf.new{'Emacs'}
-wf_emacs:subscribe(wf.windowCreated, function(window)
-    window:focus()
+-- Firefox tab switcher
+hs.hotkey.bind('ctrl', 'f', function()
+    local winBefore = hs.window.focusedWindow()
+    local task = hs.task.new(
+      '/opt/homebrew/bin/emacsclient',
+      function(exitCode, stdout, stderr)
+        winBefore:focus()
+      end,
+      { '--eval', '(++switch-firefox-tabs)' }
+    )
+    task:start()
 end)
