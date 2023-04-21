@@ -53,6 +53,7 @@ export NVS_HOME="$HOME/.nvs"
 if [ -f ~/.bash_aliases ]; then . "${HOME}/.bash_aliases"; fi
 if [ -f ~/.bash_env_vars ]; then . "${HOME}/.bash_env_vars"; fi
 if [ -f ~/.bash_completions ]; then . "${HOME}/.bash_completions"; fi
+if [ -f ~/.bash_utils ]; then . "${HOME}/.bash_utils"; fi
 
 # --- Emacs setup ---
 # LSP

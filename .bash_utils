@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# This goes to the closest ancestor dir that matches specified name
+cdd(){
+    depth=$(pwd | tr -dc '/' | wc -c)
+    for ((d=0;d<=depth;d++)); do
+        [ $d -eq 0 ] && search_dir="." || search_dir=$(printf '../%.0s' $(seq 1 $d))
+        res=( )
+        while IFS= read -r -d '' item; do
+            res+=( "$item" )
+        done < <(find $search_dir -mindepth 1 -maxdepth 1 -type d -name "$1" -print0)
+        if [ ${#res[@]} -eq 0 ]; then
+            continue
+        elif [ ${#res[@]} -eq 1 ]; then
+            t="$res"
+        elif [ ${#res[@]} -gt 1 ]; then
+            select t in "${res[@]}"; do
+                break
+            done
+        fi
+        echo "$t"
+        cd "$t" && return || { echo "Unknown Error"; return; }
+    done
+    echo "Not found"
+}

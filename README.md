@@ -7,6 +7,7 @@ git clone git@github.com:anonimitoraf/dotfiles.git --recurse-submodules ~/.dotfi
 sudo ln -sf ~/.dotfiles/scripts ~/scripts
 
 sudo ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+sudo ln -sf ~/.dotfiles/.bash_utils ~/.bash_utils
 sudo ln -sf ~/.dotfiles/.capsEsc ~/.capsEsc
 sudo ln -sf ~/.dotfiles/.inputrc ~/.inputrc
 sudo ln -sf ~/.dotfiles/dunstrc ~/.config/dunst/dunstrc
