@@ -36,6 +36,9 @@ export PATH=~/.emacs.d/bin:$PATH
 # JS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# Mac + Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # --- Load other shell scripts ---
 # Autojump
 # - Linux
