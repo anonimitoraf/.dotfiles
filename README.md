@@ -6,6 +6,8 @@ git clone git@github.com:anonimitoraf/dotfiles.git --recurse-submodules ~/.dotfi
 ``` shell
 sudo ln -sf ~/.dotfiles/scripts ~/scripts
 
+mkdir -p ~/.config/{dunst,i3,powerline-shell,kitty,erlang_ls}
+
 sudo ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 sudo ln -sf ~/.dotfiles/.bash_utils ~/.bash_utils
 sudo ln -sf ~/.dotfiles/.capsEsc ~/.capsEsc
