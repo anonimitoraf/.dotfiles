@@ -28,6 +28,9 @@ sudo ln -s ~/.dotfiles/rofi.config.rasi ~/.config/rofi/config.rasi
 mkdir -p ~/.config/i3status
 sudo ln -sf ~/.dotfiles/i3status ~/.config/i3status/config
 
+mkdir -p ~/.config/i3blocks
+sudo ln -sf ~/.dotfiles/i3blocks ~/.config/i3blocks/config
+
 sudo ln -sf ~/.dotfiles/erlang_ls.config ~/.config/erlang_ls/erlang_ls.config
 
 mkdir -p ~/.lsp

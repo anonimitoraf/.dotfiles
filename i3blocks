@@ -1,0 +1,14 @@
+[vpn]
+command=${HOME}/.dotfiles/scripts/vpn-status.sh
+markup=pango
+interval=1
+
+[time-utc]
+command=echo "<span foreground='yellow'>utc:</span> $(date --utc +%T)"
+markup=pango
+interval=1
+
+[time-local]
+command=echo "<span foreground='yellow'>local:</span> $(date +%T)"
+markup=pango
+interval=1

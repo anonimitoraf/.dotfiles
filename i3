@@ -237,7 +237,6 @@ exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
-exec_always --no-startup-id xfce4-clipman
 exec_always --no-startup-id xsetroot -solid "#242424"
 
 # Theme colors
@@ -384,7 +383,7 @@ bindsym Mod1+Alt_L mode "passthrough"
 # resize window (you can also use the mouse for that)
 
 bar {
-  status_command i3status
+  status_command i3blocks ~/.config/i3blocks
 }
 
 exec --no-startup-id setup_ngrok_ssh
