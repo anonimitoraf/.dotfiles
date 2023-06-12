@@ -1,3 +1,7 @@
+[mem]
+command=echo "mem (available): $(free -h --giga | awk '$0=$7')"
+interval=1
+
 [vpn]
 command=${HOME}/.dotfiles/scripts/vpn-status.sh
 markup=pango
