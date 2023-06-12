@@ -1,3 +1,7 @@
+[speedtest]
+command=${HOME}/.dotfiles/scripts/speedtest.sh --inlabel "download: " --outlabel "upload: "
+interval=1
+
 [mem]
 command=echo "mem (available): $(free -h --giga | awk '$0=$7')"
 interval=1
