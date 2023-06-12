@@ -3,3 +3,7 @@
 #TabsToolbar {
   visibility: collapse;
 }
+
+#navigator-toolbox[inFullscreen="true"] #PersonalToolbar {
+  visibility: unset !important;
+}
