@@ -1,0 +1,5 @@
+/* Hide the top tabs bar since I'm using treestyle tabs.
+ * It's just distracting otherwise */
+#TabsToolbar {
+  visibility: collapse;
+}
