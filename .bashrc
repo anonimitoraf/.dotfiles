@@ -2,6 +2,7 @@
 
 # Set default apps
 export BROWSER=firefox
+export EDITOR="emacsclient -c -a vim"
 
 # --- Sane defaults ---
 # append to the history file, don't overwrite it
