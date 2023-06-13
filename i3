@@ -9,7 +9,7 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 # bindsym $mod+n border normal
 
-font pango:Ubuntu Mono, FontAwesome 15
+font pango:Fantasque Sans Mono, FontAwesome 15
 
 # --- Title bar icons
 for_window [class="(?i)firefox"] title_format "<tt></tt><span foreground='#FF6611'>  </span><tt> </tt>%title"
