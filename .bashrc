@@ -34,6 +34,7 @@ fi
 # Emacs bootloader
 export PATH=~/.emacs.default/bin:$PATH
 export PATH=~/.emacs.d/bin:$PATH
+export PATH=~/.config/emacs/bin:$PATH
 # JS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
