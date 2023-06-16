@@ -1,9 +1,15 @@
-[speedtest]
-command=${HOME}/.dotfiles/scripts/speedtest.sh --inlabel "download: " --outlabel "upload: "
+[disk]
+command=echo "disk(used) $(df -h --output='pcent' / | tail -n1 | tr -s ' ' | tr -s '\n')"
+color=#e2ded0
+interval=5
+
+[bandwidth]
+command=${HOME}/.dotfiles/scripts/speedtest.sh --inlabel "🡇" --outlabel "🡅"
+color=#d37506
 interval=1
 
 [mem]
-command=echo "mem (available): $(free -h --giga | awk '$0=$7')"
+command=echo "mem(free): $(free -h --giga | awk '$0=$7')"
 interval=1
 
 [vpn]
