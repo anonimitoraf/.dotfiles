@@ -1,5 +1,5 @@
 [disk]
-command=echo "disk(used) $(df -h --output='pcent' / | tail -n1 | tr -s ' ' | tr -s '\n')"
+command=echo "disk(free): $(df -h --output='avail' / | tail -n1 | tr -s ' ' | tr -s '\n')"
 color=#e2ded0
 interval=5
 
