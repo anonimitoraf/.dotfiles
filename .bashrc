@@ -85,7 +85,8 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
     return 0;
 fi;
 
-alias unfreeze_emacs="pkill -SIGUSR2 emacs"
+# This is a command to help debug a frozen emacs
+alias unfreeze_emacs="ps aux | grep -ie emacs | grep -v grep | awk '{print $2}' | xargs kill -SIGUSR2"
 
 # --- Appearance ---
 [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
