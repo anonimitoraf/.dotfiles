@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Filesystem
-alias ll='exa -l'
-alias la='exa -la'
-alias lt='exa -lT'
-alias lg='exa -lT --git'
-
 alias fs="thunar ."
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias dired='bash ~/.dotfiles/scripts/dired.sh'
