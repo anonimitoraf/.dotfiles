@@ -41,6 +41,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Mac + Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Clojure
+export PATH="$PATH:$HOME/.babashka/bbin/bin"
+
 # --- Load other shell scripts ---
 # Autojump
 # - Linux
