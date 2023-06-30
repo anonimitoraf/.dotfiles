@@ -85,6 +85,8 @@ if [[ $INSIDE_EMACS =~ ^.*comint ]]; then
     return 0;
 fi;
 
+alias unfreeze_emacs="pkill -SIGUSR2 emacs"
+
 # --- Appearance ---
 [ -f "${HOME}/.bash-powerline.sh" ] && source "${HOME}/.bash-powerline.sh"
 
