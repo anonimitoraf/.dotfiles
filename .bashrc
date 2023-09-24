@@ -66,6 +66,9 @@ if [ -f ~/.bash_env_vars ]; then . "${HOME}/.bash_env_vars"; fi
 if [ -f ~/.bash_completions ]; then . "${HOME}/.bash_completions"; fi
 if [ -f ~/.bash_utils ]; then . "${HOME}/.bash_utils"; fi
 
+# Completions
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # --- Emacs setup ---
 # LSP
 export LSP_USE_PLISTS=true
@@ -107,6 +110,12 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 bind '"\C-r": "\e^ihstr -- \n"'
 export HSTR_CONFIG=monochromatic,help-on-opposite-side,raw-history-view
+
+# Fix missing system libs in path
+export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+export LIBRARY_PATH="$LIBRARY_PATH:$SDKROOT/usr/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SDKROOT/usr/lib"
+export PATH="$PATH:$SDKROOT/usr/lib"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
