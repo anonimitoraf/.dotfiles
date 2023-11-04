@@ -17,6 +17,8 @@ export HISTFILESIZE=2000000
 export PROMPT_DIRTRIM=3
 # Make sure initial state is known
 export PROMPT_COMMAND=""
+# Support 24bit color for emacs tty
+export COLORTERM=truecolor
 
 # --- Set up paths ---
 # Base paths
