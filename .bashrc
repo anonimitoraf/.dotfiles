@@ -114,11 +114,13 @@ function hstrnotiocsti {
 if [[ $- =~ .*i.* ]]; then bind -x '"\C-r": "hstrnotiocsti"'; fi
 export HSTR_TIOCSTI=n
 
-# Fix missing system libs in path
-export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
-export LIBRARY_PATH="$LIBRARY_PATH:$SDKROOT/usr/lib"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SDKROOT/usr/lib"
-export PATH="$PATH:$SDKROOT/usr/lib"
+# (only for Mac) Fix missing system libs in path
+if [ "$(uname)" == "Darwin" ]; then
+  export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+  export LIBRARY_PATH="$LIBRARY_PATH:$SDKROOT/usr/lib"
+  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SDKROOT/usr/lib"
+  export PATH="$PATH:$SDKROOT/usr/lib"
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
