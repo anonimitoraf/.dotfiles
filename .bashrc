@@ -46,6 +46,9 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Java
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH:/usr/lib/jvm/java-17-openjdk/lib/server/
+
 # Clojure
 export PATH="$PATH:$HOME/.babashka/bbin/bin"
 
