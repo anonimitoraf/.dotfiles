@@ -70,6 +70,7 @@ if [ -f ~/.bash_aliases ]; then . "${HOME}/.bash_aliases"; fi
 if [ -f ~/.bash_env_vars ]; then . "${HOME}/.bash_env_vars"; fi
 if [ -f ~/.bash_completions ]; then . "${HOME}/.bash_completions"; fi
 if [ -f ~/.bash_utils ]; then . "${HOME}/.bash_utils"; fi
+if [ -f ~/.bash_private ]; then . "${HOME}/.bash_private"; fi
 
 # Completions
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
