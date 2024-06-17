@@ -7,6 +7,7 @@ docker run -d \
     -p 6881:6881/udp \
     -p 9999:9999 \
     -p 8118:8118 \
+    --restart always \
     --name=qbittorrentvpn \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn/data:/data \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn:/config \
