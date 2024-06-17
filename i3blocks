@@ -18,11 +18,11 @@ markup=pango
 interval=1
 
 [time-utc]
-command=echo "<span foreground='yellow'>utc:</span> $(date --utc +%T)"
+command=echo "<span foreground='yellow'>utc:</span> $(date '+%b %d %T')"
 markup=pango
 interval=1
 
 [time-local]
-command=echo "<span foreground='yellow'>local:</span> $(date +%T)"
+command=echo "<span foreground='yellow'>local:</span> $(date '+%b %d %T')"
 markup=pango
 interval=1
