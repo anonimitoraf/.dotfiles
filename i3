@@ -232,6 +232,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id bash ~/scripts/tmux-resurrect.sh
 exec --no-startup-id ~/.screenlayout/default.sh
+# Prevent initial delay when holding keys
+exec --no-startup-id xset r rate 250 50
 exec_always --no-startup-id dunst
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id ff-theme-util
