@@ -9,6 +9,8 @@ docker run -d \
     -p 8118:8118 \
     --restart always \
     --name=qbittorrentvpn \
+    --cap-add=NET_ADMIN \
+    --device=/dev/net/tun \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn/data:/data \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn:/config \
     -v /mnt/8tb/big-torrents:/big-torrents \
