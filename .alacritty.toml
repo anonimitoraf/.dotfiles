@@ -36,9 +36,6 @@ y = 0
 [scrolling]
 history = 100000
 
-[window]
-decorations = "none"
-
 [window.dimensions]
 columns = 0
 lines = 0
