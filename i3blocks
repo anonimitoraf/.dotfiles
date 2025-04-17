@@ -27,3 +27,7 @@ command=echo "<span foreground='yellow'>utc:</span> $(date '+%b %d %T')"
 markup=pango
 interval=1
 
+## Note that this might not work for all devices
+# [battery]
+# command=echo "battery: $(acpi -b | grep -P -o '([0-9]+%)' | tr '\n' ' ')"
+# interval=1
