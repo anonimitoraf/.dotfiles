@@ -232,8 +232,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id bash ~/scripts/tmux-resurrect.sh
 exec --no-startup-id ~/.screenlayout/default.sh
+exec_always --no-startup-id xfce4-power-manager
 # Prevent initial delay when holding keys
-exec --no-startup-id xset r rate 250 50
+exec_always --no-startup-id xset r rate 250 50
 exec_always --no-startup-id dunst
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id ff-theme-util
@@ -241,6 +242,10 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xmousepasteblock
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 exec_always --no-startup-id xsetroot -solid "#242424"
+
+# For my Thinkpad x270
+# exec_always --no-startup-id xgamma -bgamma 0.8
+# exec_always --no-startup-id vibrant-cli eDP-1 2
 
 # Theme colors
 # class                 border  backgr. text    indicator   child_border
