@@ -23,7 +23,7 @@ sudo ln -sf ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
 sudo ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 mkdir -p ~/.config/rofi
-sudo ln -s ~/.dotfiles/rofi.config.rasi ~/.config/rofi/config.rasi
+sudo ln -sf ~/.dotfiles/rofi.config.rasi ~/.config/rofi/config.rasi
 
 mkdir -p ~/.config/i3status
 sudo ln -sf ~/.dotfiles/i3status ~/.config/i3status/config
