@@ -59,13 +59,19 @@ export PATH="$PATH:$HOME/.babashka/bbin/bin"
 [[ -s "${HOME}/.autojump/etc/profile.d/autojump.sh" ]] && source "${HOME}/.autojump/etc/profile.d/autojump.sh"
 # - Mac
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 # Keychain
 # Don't have to enter passphrases all the time. See https://stackoverflow.com/a/42165501
 type keychain >&/dev/null && keychain -q --agents ssh >&/dev/null
 [ -f "${HOME}/.keychain/$HOSTNAME-sh" ] && source "${HOME}/.keychain/$HOSTNAME-sh"
+
+# Prevent being asked for SSH passphrases all the time
+eval $(ssh-agent -s) >> /dev/null
+
 # JS
 export NVS_HOME="$HOME/.nvs"
 [ -s "${NVS_HOME}/nvs.sh" ] && . "${NVS_HOME}/nvs.sh" > /dev/null
+
 # Aliases, etc
 if [ -f ~/.bash_aliases ]; then . "${HOME}/.bash_aliases"; fi
 if [ -f ~/.bash_env_vars ]; then . "${HOME}/.bash_env_vars"; fi
