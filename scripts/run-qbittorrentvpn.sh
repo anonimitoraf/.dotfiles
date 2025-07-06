@@ -1,5 +1,11 @@
 # Get UDP .ovpn file from https://nordvpn.com/ovpn/ and place it into
-# /config/openvpn/ inside the docker container
+# /config/openvpn/ inside a new folder ./qbittorrent-vpn
+#
+# Get the username password from https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/service-credentials/
+# then paste them into `./qbittorrent-vpn/auth.txt`
+#
+# Note: you'll have to change:
+# auth-user-pass -> auth-user-pass /config/openvpn/auth.txt
 
 docker run -d \
     --cap-add=NET_ADMIN \

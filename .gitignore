@@ -2,3 +2,4 @@
 .tmux/resurrect/*.txt
 .clj-kondo
 /.lsp/.cache
+/scripts/qbittorrent-vpn/

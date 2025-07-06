@@ -4,7 +4,7 @@ git clone git@github.com:anonimitoraf/dotfiles.git --recurse-submodules ~/.dotfi
 
 
 ``` shell
-sudo ln -sf ~/.dotfiles/scripts ~/scripts
+sudo ln -sf ~/.dotfiles/scripts ~/personal/scripts
 
 mkdir -p ~/.config/{dunst,i3,powerline-shell,kitty,erlang_ls}
 
