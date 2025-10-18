@@ -19,7 +19,7 @@ docker run -d \
     --device=/dev/net/tun \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn/data:/data \
     -v /home/anonimito/personal/scripts/qbittorrent-vpn:/config \
-    -v /mnt/8tb/big-torrents:/big-torrents \
+    -v /mnt/3tb/torrents:/config/qBittorrent/downloads \
     -v /etc/localtime:/etc/localtime:ro \
     -e VPN_ENABLED=yes \
     -e VPN_PROV=custom \

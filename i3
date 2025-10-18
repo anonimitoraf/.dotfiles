@@ -233,6 +233,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id bash ~/scripts/tmux-resurrect.sh
 exec --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id ssh-agent
 # Prevent initial delay when holding keys
 exec_always --no-startup-id xset r rate 250 50
 # Turn off screen after 5 minutes
