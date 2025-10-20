@@ -17,6 +17,7 @@ sudo ln -sf ~/.dotfiles/i3 ~/.config/i3/config
 sudo ln -sf ~/.dotfiles/powerline-shell-config.json ~/.config/powerline-shell/config.json
 sudo ln -sf ~/.dotfiles/greenclip.cfg ~/.config/greenclip.cfg
 sudo ln -sf ~/.dotfiles/.alacritty.toml ~/.alacritty.toml
+sudo ln -sf ~/.dotfiles/.alacritty.toml ~/.config/alacritty/alacritty.toml
 sudo ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -sf ~/.dotfiles/.tmux ~/.tmux
 sudo ln -sf ~/.dotfiles/scripts/bash-powerline.sh ~/.bash-powerline.sh
