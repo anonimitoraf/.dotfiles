@@ -305,9 +305,12 @@ mode "$mode_gaps_outer" {
 # set power-manager and volume control
 exec --no-startup-id mate-power-manager
 
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
-# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2db- unmute
-# bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+# volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +20% && notify-send -t 500 --hint int:transient:1 "Volume up"
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -20% && notify-send -t 500 --hint int:transient:1 "Volume down"
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "$(pactl get-default-sink)" toggle && notify-send -t 500 --hint int:transient:1 "Mute toggle"
+
+
 
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
@@ -357,9 +360,9 @@ set $volumestep 5
 #set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
 
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
-bindsym XF86AudioRaiseVolume exec $volumepath/volume -np -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statussig
+# bindsym XF86AudioRaiseVolume exec $volumepath/volume -np -i $volumestep -t $statuscmd -u $statussig
+# bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep -t $statuscmd -u $statussig
+# bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statussig
 
 # switching between windows
 bindsym $mod+Tab exec rofi -show window
