@@ -386,8 +386,8 @@ for_window [title="^emacs-clippo.*" class="Emacs"] floating enable
 # Focusing particular windows/containers
 bindsym $mod+e [class="Emacs"] focus
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl set +10% && [ $(brightnessctl get) -eq $(brightnessctl max) ] && notify-send -t 1000 --hint int:transient:1 'Brightness at 100%'"
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 mode "passthrough" {
     bindsym Mod1+Alt_L mode "default"
