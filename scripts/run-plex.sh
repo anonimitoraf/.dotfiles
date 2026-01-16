@@ -1,6 +1,6 @@
 docker run -d \
   --name=plex \
-  --net=host \
+  -p 32400:32400 \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Australia/Melbourne \
