@@ -1,11 +1,17 @@
 # Get UDP .ovpn file from https://nordvpn.com/ovpn/ and place it into
-# /config/openvpn/ inside a new folder ./qbittorrent-vpn
+# inside a new folder ./scripts/qbittorrent-vpn/openvpn
 #
 # Get the username password from https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/service-credentials/
 # then paste them into `./qbittorrent-vpn/auth.txt`
 #
-# Note: you'll have to change:
+# Note: you'll have to change (in the .ovpn file):
 # auth-user-pass -> auth-user-pass /config/openvpn/auth.txt
+#
+# For the web UI password (see https://github.com/binhex/arch-qbittorrentvpn/issues/213#issuecomment-1933317197)
+# add this to ./scripts/qbittorrent-vpn/qBittorrent/config/qBittorrent.conf
+# WebUI\User=admin
+# WebUI\Password_PBKDF2="@ByteArray(EFt1EXdMP1pvwWU5AxgL7w==:9nNYQh9Ta8R/aP0qGu7b7yH4NgAQ50qsFPisN1bvaXJS6lZ+vilx70B6O/DHf2l2HFEmi9EqASiS+U7umMdRJA==)"
+# then restart the container
 
 docker run -d \
     --cap-add=NET_ADMIN \
@@ -17,9 +23,9 @@ docker run -d \
     --name=qbittorrentvpn \
     --cap-add=NET_ADMIN \
     --device=/dev/net/tun \
-    -v /home/anonimito/personal/scripts/qbittorrent-vpn/data:/data \
-    -v /home/anonimito/personal/scripts/qbittorrent-vpn:/config \
-    -v /mnt/3tb/torrents:/config/qBittorrent/downloads \
+    -v /home/anonimito/.dotfiles/scripts/qbittorrent-vpn/data:/data \
+    -v /home/anonimito/.dotfiles/scripts/qbittorrent-vpn:/config \
+    -v /mnt/8tb/torrents:/config/qBittorrent/downloads \
     -v /etc/localtime:/etc/localtime:ro \
     -e VPN_ENABLED=yes \
     -e VPN_PROV=custom \
