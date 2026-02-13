@@ -2,16 +2,21 @@
 # inside a new folder ./scripts/qbittorrent-vpn/openvpn
 #
 # Get the username password from https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/service-credentials/
-# then paste them into `./qbittorrent-vpn/auth.txt`
+# then paste them into `./qbittorrent-vpn/openvpn/auth.txt`
+# Format:
+# username
+# password
+
 #
 # Note: you'll have to change (in the .ovpn file):
 # auth-user-pass -> auth-user-pass /config/openvpn/auth.txt
 #
 # For the web UI password (see https://github.com/binhex/arch-qbittorrentvpn/issues/213#issuecomment-1933317197)
 # add this to ./scripts/qbittorrent-vpn/qBittorrent/config/qBittorrent.conf
+# [Preferences]
 # WebUI\User=admin
 # WebUI\Password_PBKDF2="@ByteArray(EFt1EXdMP1pvwWU5AxgL7w==:9nNYQh9Ta8R/aP0qGu7b7yH4NgAQ50qsFPisN1bvaXJS6lZ+vilx70B6O/DHf2l2HFEmi9EqASiS+U7umMdRJA==)"
-# then restart the container
+# then restart the container. This sets the password to adminadmin
 
 docker run -d \
     --cap-add=NET_ADMIN \
