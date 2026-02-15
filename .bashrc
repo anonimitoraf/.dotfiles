@@ -143,3 +143,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+# opencode
+export PATH=/home/anonimito/.opencode/bin:$PATH
