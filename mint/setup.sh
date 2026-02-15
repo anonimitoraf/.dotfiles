@@ -79,3 +79,16 @@ export godot_filename="Godot_v4.6-stable_linux.x86_64" # (change this depending 
 unzip "${godot_filename}.zip"
 sudo mv "${godot_filename}" "/usr/local/bin/godot"
 mkdir -p "~/games"
+
+# set up tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
+# for the exit node - enable IP forwarding
+sudo tailscale up --advertise-exit-node
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+# then in the admin panel, go to Route Settings and enable as exit node
+
+
+
+
