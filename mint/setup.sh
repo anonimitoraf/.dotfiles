@@ -89,6 +89,7 @@ echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale
 sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
 # then in the admin panel, go to Route Settings and enable as exit node
 
-
-
+# set up ssh server
+sudo apt install openssh-server
+sudo systemctl enable ssh
 
