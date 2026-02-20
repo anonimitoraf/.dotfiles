@@ -7,7 +7,7 @@ brew install --cask font-fantasque-sans-mono-nerd-font
 # open Software Sources and enable "Source code repositories"
 
 sudo apt update && sudo apt upgrade
-sudo apt install vim i3 steam hstr rofialacritty i3blocks libmagickwand-dev htop fd-find ripgrep cmake gparted tmux
+sudo apt install vim i3 steam hstr rofialacritty i3blocks libmagickwand-dev htop fd-find ripgrep cmake gparted tmux xclip
 sudo apt install libtool-bin # IMPORTANT for compiling vterm!!!
 
 # rust
@@ -93,3 +93,7 @@ sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
 sudo apt install openssh-server
 sudo systemctl enable ssh
 
+# obs studio
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install obs-studio
