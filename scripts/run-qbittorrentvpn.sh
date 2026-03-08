@@ -18,6 +18,12 @@
 # WebUI\Password_PBKDF2="@ByteArray(EFt1EXdMP1pvwWU5AxgL7w==:9nNYQh9Ta8R/aP0qGu7b7yH4NgAQ50qsFPisN1bvaXJS6lZ+vilx70B6O/DHf2l2HFEmi9EqASiS+U7umMdRJA==)"
 # then restart the container. This sets the password to adminadmin
 
+# For the Unraid setup, don't forget the following:
+# - set VPN provider (from pia) to custom
+# - fix the LAN subnet to 192.168.0.0/24,100.64.0.0/10 (latter is tailscale)
+# - disable strict port forwarding
+# - (docker settings) change macvlan -> ipvlan
+
 docker run -d \
     --cap-add=NET_ADMIN \
     -p 6881:6881 \
