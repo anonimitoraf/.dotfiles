@@ -48,4 +48,8 @@ mkdir -p ~/.config/skhd
 sudo ln -sf ~/.dotfiles/skhdrc ~/.config/skhd/skhdrc
 
 sudo ln -sf ~/.dotfiles/z.sh ~/z.sh
+
+mkdir -p ~/.opencode
+sudo ln -sf ~/.dotfiles/opencode.json ~/.opencode/opencode.json
+sudo ln -sf ~/.dotfiles/global-instructions.md ~/.opencode/global-instructions.md
 ```
