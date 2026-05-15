@@ -1,0 +1,20 @@
+{
+  "lastChangelogVersion": "0.74.0",
+  "packages": [
+    "npm:@plannotator/pi-extension",
+    "npm:pi-opencode-bridge",
+    "npm:context-mode",
+    "npm:pi-simplify"
+  ],
+  "defaultProvider": "oc-sdk-go",
+  "defaultModel": "qwen3.6-plus",
+  "steeringMode": "all",
+  "followUpMode": "all",
+  "transport": "auto",
+  "hideThinkingBlock": true,
+  "collapseChangelog": true,
+  "quietStartup": true,
+  "enableInstallTelemetry": false,
+  "treeFilterMode": "default",
+  "theme": "one-dark"
+}

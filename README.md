@@ -52,4 +52,8 @@ sudo ln -sf ~/.dotfiles/z.sh ~/z.sh
 mkdir -p ~/.opencode
 sudo ln -sf ~/.dotfiles/opencode.json ~/.opencode/opencode.json
 sudo ln -sf ~/.dotfiles/global-instructions.md ~/.opencode/global-instructions.md
+
+mkdir -p ~/.pi/agent
+sudo ln -sf ~/.dotfiles/pi-agent-settings.json ~/.pi/agent/settings.json
+sudo ln -sf ~/.dotfiles/pi-agent-themes ~/.pi/agent/themes
 ```
