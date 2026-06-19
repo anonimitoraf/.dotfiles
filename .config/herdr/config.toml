@@ -1,0 +1,63 @@
+# Ported from ~/.tmux.conf (custom bindings + default tmux bindings)
+
+[terminal]
+default_shell = "/bin/zsh"
+
+[keys]
+prefix = "ctrl+b"
+
+# Disable herdr default that conflicts with workspace_picker
+settings = "prefix+shift+s"
+
+# split horizontal: custom (prefix -) + default tmux (prefix ")
+split_horizontal = ["prefix+minus", 'prefix+"']
+
+# split vertical: custom (prefix |) + default tmux (prefix %)
+split_vertical = ["prefix+|", "prefix+%"]
+
+# pane navigation (tmux: prefix + C-h/j/k/l)
+focus_pane_left = "prefix+ctrl+h"
+focus_pane_down = "prefix+ctrl+j"
+focus_pane_up = "prefix+ctrl+k"
+focus_pane_right = "prefix+ctrl+l"
+
+# swap pane (tmux: prefix + > / <)
+swap_pane_down = "prefix+>"
+swap_pane_up = "prefix+<"
+
+# toggle fullscreen/zoom (tmux: prefix + Space)
+zoom = "prefix+space"
+
+# cycle panes (tmux: prefix + Tab -> last window)
+cycle_pane_next = "prefix+tab"
+
+# new tab (default tmux: prefix + c)
+new_tab = "prefix+c"
+
+# previous/next tab
+previous_tab = "prefix+p"
+next_tab = "prefix+ctrl+n"
+
+# new workspace (tmux: prefix + n / prefix + C-c)
+new_workspace = ["prefix+n", "prefix+ctrl+c"]
+
+# workspace picker (tmux: prefix + s -> choose-tree sorted by name)
+workspace_picker = "prefix+s"
+
+# rename workspace (tmux: prefix + $)
+rename_workspace = "prefix+$"
+
+# navigate workspace picker with j/k (disables j/k for pane nav in navigate mode)
+navigate_workspace_down = "j"
+navigate_workspace_up = "k"
+navigate_pane_down = "down"
+navigate_pane_up = "up"
+
+# close pane
+close_pane = "prefix+x"
+
+[ui]
+mouse_capture = true
+
+[advanced]
+scrollback_limit_bytes = 50000000

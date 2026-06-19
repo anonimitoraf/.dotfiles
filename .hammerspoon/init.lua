@@ -64,6 +64,53 @@ hs.hotkey.bind({'command'}, 'return', function ()
   end
 end)
 
+-- Switch Ghostty
+hs.hotkey.bind({'command', 'shift'}, 'return', function ()
+  local APP_NAME = 'Ghostty'
+  function moveGhosttyWindow(ghostty, space, mainScreen)
+    local win = nil
+    while win == nil do
+      win = ghostty:mainWindow()
+    end
+    local fullScreen = not win:isStandard()
+    if fullScreen then
+      hs.eventtap.keyStroke('cmd', 'return', 0, ghostty)
+    end
+    winFrame = win:frame()
+    scrFrame = mainScreen:fullFrame()
+    winFrame.w = scrFrame.w
+    winFrame.y = scrFrame.y
+    winFrame.x = scrFrame.x
+    win:setFrame(winFrame, 0)
+    spaces.moveWindowToSpace(win, space)
+    if fullScreen then
+      hs.eventtap.keyStroke('cmd', 'return', 0, ghostty)
+    end
+    win:focus()
+  end
+  local ghostty = hs.application.get(APP_NAME)
+  if ghostty ~= nil and ghostty:isFrontmost() then
+    ghostty:hide()
+  else
+    local space = spaces.focusedSpace()
+    local mainScreen = hs.screen.mainScreen()
+    if ghostty == nil and hs.application.launchOrFocus(APP_NAME) then
+      local appWatcher = nil
+      appWatcher = hs.application.watcher.new(function(name, event, app)
+        if event == hs.application.watcher.launched and name == APP_NAME then
+          app:hide()
+          moveGhosttyWindow(app, space, mainScreen)
+          appWatcher:stop()
+        end
+      end)
+      appWatcher:start()
+    end
+    if ghostty ~= nil then
+      moveGhosttyWindow(ghostty, space, mainScreen)
+    end
+  end
+end)
+
 -- bind hotkey
 hs.hotkey.bind({'cmd'}, 'l', function()
   -- get the focused window
