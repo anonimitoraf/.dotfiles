@@ -1,0 +1,226 @@
+# ~/.aerospace.toml
+# Ported from i3 config: https://github.com/anonimitoraf/.dotfiles (i3)
+# AeroSpace docs: https://nikitabobko.github.io/AeroSpace/guide
+#
+# i3 $mod is Mod1 (Alt). Bindings below use Cmd as the modifier (user preference),
+# EXCEPT the app launchers on c/v/z which stay on Alt to preserve macOS
+# Copy/Paste/Undo. NOTE: cmd-w and cmd-q override macOS Close-tab and Quit.
+#
+# NOTE ON UNPORTABLE FEATURES (X11/i3-only, no AeroSpace equivalent):
+#   - Window borders / border styles (border none|pixel|normal) — macOS draws its own.
+#   - Per-app title-bar icons + colors (for_window ... title_format).
+#   - Scratchpad (move/show scratchpad).
+#   - Sticky windows, focus parent, focus mode_toggle (tiling<->floating focus).
+#   - Passthrough mode keyed on Alt_L alone (AeroSpace can't bind a lone modifier).
+#   - X11 autostart daemons (compton, nitrogen, nm-applet, dunst, greenclip, etc.).
+#   These are documented inline where they occur below.
+
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+# Normalizations. Disabled to match i3, which does NOT auto-flatten containers or
+# force opposite orientation — and because the 'split' bindings below ($mod+p/o/q)
+# require flatten-containers to be off to have any effect.
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+automatically-unhide-macos-hidden-apps = false
+focus-follows-mouse.enabled = false
+
+# i3: workspace_auto_back_and_forth yes  -> re-pressing the current workspace's key
+# jumps back to the previous one.
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+key-mapping.preset = 'qwerty'
+
+# i3 defined 9 workspaces (ws1..ws9). Keep them alive even when empty.
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+# --- Gaps -------------------------------------------------------------------
+# i3: gaps inner 10 / gaps outer -4 (smart_gaps on).
+# AeroSpace can't do negative outer gaps or "smart gaps" (auto-hide when 1 window),
+# so outer is set to 0 and inner kept at 10.
+gaps.inner.horizontal = 10
+gaps.inner.vertical   = 10
+gaps.outer.left        = 0
+gaps.outer.bottom      = 0
+gaps.outer.top         = 0
+gaps.outer.right       = 0
+
+# --- Startup ----------------------------------------------------------------
+# i3 autostarted X11 daemons (compton, nitrogen, nm-applet, pamac-tray, dunst,
+# greenclip, ssh-agent, dropbox, etc.). On macOS these are handled by the OS or
+# login items — add any `exec-and-forget` you still want here.
+after-startup-command = []
+
+[mode.main.binding]
+
+    # --- Launch apps (i3 exec) ---------------------------------------------
+    # i3: $mod+Return exec alacritty
+    cmd-enter = 'exec-and-forget open -a Alacritty'
+    # i3: $mod+backslash exec xfce4-terminal  (no xfce on macOS -> fall back to Terminal.app)
+    cmd-backslash = 'exec-and-forget open -a Terminal'
+    # i3: $mod+v exec code — kept on Alt to preserve macOS Paste (cmd-v)
+    alt-v = 'exec-and-forget open -a "Visual Studio Code"'
+    # i3: $mod+c exec firefox — kept on Alt to preserve macOS Copy (cmd-c)
+    alt-c = 'exec-and-forget open -a Firefox'
+    # i3: $mod+z exec 1password — kept on Alt to preserve macOS Undo (cmd-z)
+    alt-z = 'exec-and-forget open -a "1Password"'
+    # i3: $mod+n exec emacsclient --eval "(emacs-everywhere)"
+    cmd-n = 'exec-and-forget emacsclient --eval "(emacs-everywhere)"'
+    # i3: $mod+d exec rofi (app launcher). No AeroSpace equivalent — macOS uses
+    # Spotlight (cmd-space) or a launcher like Raycast/Alfred. Approximated with Spotlight:
+    # alt-d = 'exec-and-forget open -a "Raycast"'
+
+    # i3: $mod+e [class="Emacs"] focus  (focus a specific app). AeroSpace has no
+    # "focus by app", so this just raises/opens Emacs.
+    cmd-e = 'exec-and-forget open -a Emacs'
+
+    # i3: $mod+Tab exec rofi -show window (window switcher). Use macOS cmd-tab instead.
+
+    # i3: Print exec flameshot gui. No Print key on Mac keyboards. Use the macOS
+    # native interactive screenshot (cmd-shift-4 / cmd-shift-5) instead.
+
+    # --- Kill window (i3: $mod+Shift+q kill) -------------------------------
+    cmd-shift-q = 'close'
+
+    # --- Focus (i3: $mod+hjkl) ---------------------------------------------
+    cmd-h = 'focus left'
+    cmd-j = 'focus down'
+    cmd-k = 'focus up'
+    cmd-l = 'focus right'
+
+    # --- Move window (i3: $mod+Shift+hjkl and arrows) ----------------------
+    cmd-shift-h = 'move left'
+    cmd-shift-j = 'move down'
+    cmd-shift-k = 'move up'
+    cmd-shift-l = 'move right'
+    cmd-shift-left  = 'move left'
+    cmd-shift-down  = 'move down'
+    cmd-shift-up    = 'move up'
+    cmd-shift-right = 'move right'
+
+    # --- Split orientation (i3: $mod+p/o/q) --------------------------------
+    cmd-p = 'split horizontal'          # i3: $mod+p split horizontal
+    cmd-o = 'split vertical'            # i3: $mod+o split vertical
+    cmd-q = 'split opposite'            # i3: $mod+q split toggle == 'split opposite'
+
+    # --- Fullscreen (i3: $mod+f) -------------------------------------------
+    cmd-f = 'fullscreen'
+
+    # --- Layouts (i3: stacking/tabbed/toggle split) ------------------------
+    cmd-s = 'layout v_accordion'        # i3 "stacking"
+    cmd-w = 'layout h_accordion'        # i3 "tabbed"
+    # i3: $mod+t "toggle split" — intentionally UNBOUND so Cmd+T passes through to
+    # apps (New Tab). Re-add on another key if wanted, e.g.:
+    # cmd-shift-t = 'layout tiles horizontal vertical'
+
+    # --- Floating toggle (i3: $mod+Shift+space) ----------------------------
+    cmd-shift-space = 'layout floating tiling'
+    # i3: $mod+space focus mode_toggle (focus between tiling/floating) — no equivalent.
+    # i3: $mod+Shift+s sticky toggle — not supported by AeroSpace.
+    # i3: $mod+a focus parent — no equivalent.
+
+    # --- Scratchpad (i3: $mod+minus / $mod+Shift+minus) --------------------
+    # Not supported. Closest workflow: dedicate a hidden workspace (e.g. workspace S)
+    # and move windows there / back.
+
+    # --- Workspace next / prev (i3: $mod+Ctrl+Right / Left) ----------------
+    cmd-ctrl-right = 'workspace --wrap-around next'
+    cmd-ctrl-left  = 'workspace --wrap-around prev'
+
+    # --- Back-and-forth (i3: $mod+b) ---------------------------------------
+    cmd-b = 'workspace-back-and-forth'
+    # i3: $mod+Shift+b move container to ws back_and_forth; workspace back_and_forth
+    # AeroSpace has no "back_and_forth" target for moves — no direct equivalent.
+
+    # --- Switch to workspace (i3: $mod+1..9) -------------------------------
+    cmd-1 = 'workspace 1'
+    cmd-2 = 'workspace 2'
+    cmd-3 = 'workspace 3'
+    cmd-4 = 'workspace 4'
+    cmd-5 = 'workspace 5'
+    cmd-6 = 'workspace 6'
+    cmd-7 = 'workspace 7'
+    cmd-8 = 'workspace 8'
+    cmd-9 = 'workspace 9'
+
+    # --- Move window to workspace, stay put (i3: $mod+Ctrl+1..9) -----------
+    cmd-ctrl-1 = 'move-node-to-workspace 1'
+    cmd-ctrl-2 = 'move-node-to-workspace 2'
+    cmd-ctrl-3 = 'move-node-to-workspace 3'
+    cmd-ctrl-4 = 'move-node-to-workspace 4'
+    cmd-ctrl-5 = 'move-node-to-workspace 5'
+    cmd-ctrl-6 = 'move-node-to-workspace 6'
+    cmd-ctrl-7 = 'move-node-to-workspace 7'
+    cmd-ctrl-8 = 'move-node-to-workspace 8'
+    cmd-ctrl-9 = 'move-node-to-workspace 9'
+
+    # --- Move window to workspace AND follow (i3: $mod+Shift+1..9) ----------
+    cmd-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+    cmd-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+    cmd-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+    cmd-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+    cmd-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+    cmd-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+    cmd-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+    cmd-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+    cmd-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+
+    # --- Reload config (i3: $mod+Shift+c) ----------------------------------
+    cmd-shift-c = 'reload-config'
+
+    # --- Enter modes (i3: $mod+r resize, $mod+0 system, $mod+Shift+g gaps) --
+    cmd-r = 'mode resize'
+    cmd-0 = 'mode system'
+    # i3 gap-adjust mode ($mod+Shift+g) is omitted: AeroSpace gaps aren't runtime-
+    # adjustable via commands (edit this file + reload instead).
+
+# --- Resize mode (i3 "resize") ---------------------------------------------
+# i3 keys preserved: j/k/l/semicolon + arrows. i3 used 5px/ppt steps; AeroSpace
+# resize is in points — using 50 to feel similar.
+[mode.resize.binding]
+    j = 'resize width -50'      # i3: shrink width
+    k = 'resize height +50'     # i3: grow height
+    l = 'resize height -50'     # i3: shrink height
+    semicolon = 'resize width +50'  # i3: grow width
+
+    left  = 'resize width -50'
+    down  = 'resize height +50'
+    up    = 'resize height -50'
+    right = 'resize width +50'
+
+    enter = 'mode main'
+    esc   = 'mode main'
+
+# --- System mode (i3 "$mode_system": lock/exit/suspend/reboot/shutdown) ------
+# macOS equivalents. Reboot/shutdown/logout use AppleScript (System Events).
+[mode.system.binding]
+    # (l)ock  -> start the screensaver / lock
+    l = ['exec-and-forget pmset displaysleepnow', 'mode main']
+    # (s)uspend -> sleep
+    s = ['exec-and-forget pmset sleepnow', 'mode main']
+    # (e)xit -> log out
+    e = ["exec-and-forget osascript -e 'tell app \"System Events\" to log out'", 'mode main']
+    # (r)eboot
+    r = ["exec-and-forget osascript -e 'tell app \"System Events\" to restart'", 'mode main']
+    # (Shift+s)hutdown
+    shift-s = ["exec-and-forget osascript -e 'tell app \"System Events\" to shut down'", 'mode main']
+    # switch_(u)ser / (h)ibernate have no clean macOS CLI equivalent — omitted.
+
+    enter = 'mode main'
+    esc   = 'mode main'
+
+# --- Window rules (i3 "for_window") ----------------------------------------
+# Most i3 rules targeted Linux-only apps (Pavucontrol, GParted, Pamac, etc.).
+# Below are the ones that carry over conceptually. Bundle IDs are used for
+# matching — adjust to taste. Find an app's id with:  osascript -e 'id of app "AppName"'
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'layout tiling'   # i3 forced chrome to tiling on current workspace
