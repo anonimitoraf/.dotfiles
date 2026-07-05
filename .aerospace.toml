@@ -4,7 +4,8 @@
 #
 # i3 $mod is Mod1 (Alt). Bindings below use Cmd as the modifier (user preference),
 # EXCEPT the app launchers on c/v/z which stay on Alt to preserve macOS
-# Copy/Paste/Undo. NOTE: cmd-w and cmd-q override macOS Close-tab and Quit.
+# Copy/Paste/Undo. NOTE: cmd-q overrides macOS Quit. (cmd-w and cmd-t are left
+# unbound so Close-tab / New-tab pass through to apps.)
 #
 # NOTE ON UNPORTABLE FEATURES (X11/i3-only, no AeroSpace equivalent):
 #   - Window borders / border styles (border none|pixel|normal) — macOS draws its own.
@@ -116,7 +117,9 @@ after-startup-command = []
 
     # --- Layouts (i3: stacking/tabbed/toggle split) ------------------------
     cmd-s = 'layout v_accordion'        # i3 "stacking"
-    cmd-w = 'layout h_accordion'        # i3 "tabbed"
+    # i3: $mod+w "tabbed" — intentionally UNBOUND so Cmd+W passes through to apps
+    # (Close Tab/Window). Re-add on another key if wanted, e.g.:
+    # cmd-shift-w = 'layout h_accordion'
     # i3: $mod+t "toggle split" — intentionally UNBOUND so Cmd+T passes through to
     # apps (New Tab). Re-add on another key if wanted, e.g.:
     # cmd-shift-t = 'layout tiles horizontal vertical'
