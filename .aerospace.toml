@@ -62,6 +62,24 @@ gaps.outer.right       = 0
 # login items — add any `exec-and-forget` you still want here.
 after-startup-command = []
 
+# Pin workspaces to monitors by ROLE, not by monitor name, so the layout is
+# portable across setups (office DELL, home monitor, laptop-only):
+#   1-5 -> the laptop's built-in screen ("built-in" substring-matches
+#          "Built-in Retina Display" on any MacBook).
+#   6-9 -> the external monitor if one is connected ("secondary"), otherwise
+#          fall back to the built-in screen (laptop-only -> all on one screen).
+# MUST stay below all top-level key=value settings (this is a [table]).
+[workspace-to-monitor-force-assignment]
+1 = 'built-in'
+2 = 'built-in'
+3 = 'built-in'
+4 = 'built-in'
+5 = 'built-in'
+6 = ['secondary', 'built-in']
+7 = ['secondary', 'built-in']
+8 = ['secondary', 'built-in']
+9 = ['secondary', 'built-in']
+
 [mode.main.binding]
 
     # --- Launch apps (i3 exec) ---------------------------------------------
