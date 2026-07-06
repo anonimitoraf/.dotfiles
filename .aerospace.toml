@@ -109,7 +109,8 @@ after-startup-command = []
     # native interactive screenshot (cmd-shift-4 / cmd-shift-5) instead.
 
     # --- Kill window (i3: $mod+Shift+q kill) -------------------------------
-    alt-shift-q = 'close'
+    # Overrides macOS "Log Out" (Cmd+Shift+Q) — closes the focused window instead.
+    cmd-shift-q = 'close'
 
     # --- Focus (i3: $mod+hjkl) ---------------------------------------------
     cmd-h = 'focus left'
