@@ -49,11 +49,6 @@ sudo ln -sf ~/.dotfiles/skhdrc ~/.config/skhd/skhdrc
 
 sudo ln -sf ~/.dotfiles/.aerospace.toml ~/.aerospace.toml
 
-# sketchybar (top-bar workspace indicator for aerospace)
-# deps: brew install felixkratz/formulae/sketchybar && brew install --cask font-sketchybar-app-font
-sudo ln -sf ~/.dotfiles/sketchybar ~/.config/sketchybar
-# then: brew services start felixkratz/formulae/sketchybar
-
 sudo ln -sf ~/.dotfiles/z.sh ~/z.sh
 
 mkdir -p ~/.opencode

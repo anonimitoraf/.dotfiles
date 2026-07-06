@@ -40,12 +40,6 @@ focus-follows-mouse.enabled = false
 # jumps back to the previous one.
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-# Notify SketchyBar of workspace changes so the top-bar workspace list updates.
-# Triggers a custom 'aerospace_workspace_change' event, passing the now-focused
-# workspace so plugins/aerospace.sh can highlight it without re-querying.
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
-
 key-mapping.preset = 'qwerty'
 
 # i3 defined 9 workspaces (ws1..ws9). Keep them alive even when empty.
