@@ -60,7 +60,13 @@ gaps.outer.right       = 0
 # i3 autostarted X11 daemons (compton, nitrogen, nm-applet, pamac-tray, dunst,
 # greenclip, ssh-agent, dropbox, etc.). On macOS these are handled by the OS or
 # login items — add any `exec-and-forget` you still want here.
-after-startup-command = []
+#
+# JankyBorders (`brew install FelixKratz/formulae/borders`) draws the window
+# borders AeroSpace can't (macOS owns window chrome). Focused window gets a bold
+# cyan border; unfocused windows get a dim grey one. Colors are 0xAARRGGBB.
+after-startup-command = [
+  'exec-and-forget /opt/homebrew/bin/borders active_color=0xff00ffff inactive_color=0xff494d64 width=6.0'
+]
 
 # Pin workspaces to monitors by ROLE, not by monitor name, so the layout is
 # portable across setups (office DELL, home monitor, laptop-only):
@@ -85,6 +91,17 @@ after-startup-command = []
     # --- Launch apps (i3 exec) ---------------------------------------------
     # i3: $mod+Return exec alacritty
     alt-enter = 'exec-and-forget open -a Alacritty'
+    # cmd+Return: focus the existing Alacritty window (across all workspaces)
+    # instead of reopening it; fall back to launching if none exists.
+    # AeroSpace has no "focus by app", so look up the window id and focus it.
+    cmd-enter = '''exec-and-forget /bin/sh -c '
+      wid=$(/opt/homebrew/bin/aerospace list-windows --monitor all --app-bundle-id org.alacritty --format "%{window-id}" | head -n1)
+      if [ -n "$wid" ]; then
+        /opt/homebrew/bin/aerospace focus --window-id "$wid"
+      else
+        open -a Alacritty
+      fi
+    ' '''
     # i3: $mod+backslash exec xfce4-terminal  (no xfce on macOS -> fall back to Terminal.app)
     alt-backslash = 'exec-and-forget open -a Terminal'
     # i3: $mod+v exec code
