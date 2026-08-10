@@ -154,7 +154,10 @@ after-startup-command = [
     cmd-f = 'fullscreen'
 
     # --- Layouts (i3: stacking/tabbed/toggle split) ------------------------
-    alt-s = 'layout v_accordion'        # i3 "stacking"
+    # i3: $mod+s "stacking" (layout v_accordion) — intentionally UNBOUND. The
+    # accordion offset (accordion-padding) looks like overlapping/floating
+    # windows and was too easy to trigger by accident. Re-add on another key if
+    # wanted, e.g.:  alt-s = 'layout v_accordion'
     # i3: $mod+w "tabbed" — intentionally UNBOUND so Cmd+W passes through to apps
     # (Close Tab/Window). Re-add on another key if wanted, e.g.:
     # cmd-shift-w = 'layout h_accordion'
@@ -177,7 +180,9 @@ after-startup-command = [
     cmd-ctrl-left  = 'workspace --wrap-around prev'
 
     # --- Back-and-forth (i3: $mod+b) ---------------------------------------
-    cmd-b = 'workspace-back-and-forth'
+    # cmd-b intentionally UNBOUND so Cmd+B passes through to apps (bold text in
+    # Teams, etc.). Re-add on another key if wanted, e.g.:
+    # alt-b = 'workspace-back-and-forth'
     # i3: $mod+Shift+b move container to ws back_and_forth; workspace back_and_forth
     # AeroSpace has no "back_and_forth" target for moves — no direct equivalent.
 
@@ -268,3 +273,10 @@ after-startup-command = [
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
     run = 'layout tiling'   # i3 forced chrome to tiling on current workspace
+
+# Float Teams so its dynamic popups (meeting controls, video previews, call
+# notifications) don't trigger a resize loop / accessibility conflict that
+# crashes Teams or glitches the window manager.
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.teams2'
+    run = 'layout floating'
