@@ -1,13 +1,17 @@
 {
-  "lastChangelogVersion": "0.74.0",
+  "lastChangelogVersion": "0.84.2",
   "packages": [
     "npm:@plannotator/pi-extension",
     "npm:pi-opencode-bridge",
     "npm:context-mode",
-    "npm:pi-simplify"
+    "npm:pi-simplify",
+    "npm:pi-subagents",
+    "npm:pi-mcp-adapter",
+    "npm:pi-vimmode",
+    "git:github.com/monotykamary/pi-multiprovider"
   ],
-  "defaultProvider": "oc-sdk-go",
-  "defaultModel": "qwen3.6-plus",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4.1-flash",
   "steeringMode": "all",
   "followUpMode": "all",
   "transport": "auto",
@@ -16,5 +20,10 @@
   "quietStartup": true,
   "enableInstallTelemetry": false,
   "treeFilterMode": "default",
-  "theme": "one-dark"
+  "theme": "one-dark",
+  "defaultThinkingLevel": "max",
+  "autocompleteMaxVisible": 10,
+  "terminal": {
+    "showTerminalProgress": true
+  }
 }
