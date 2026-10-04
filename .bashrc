@@ -146,3 +146,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
 # opencode
 export PATH=/home/anonimito/.opencode/bin:$PATH
+
+# Added by jcode installer
+export PATH="/home/anonimito/.local/bin:$PATH"

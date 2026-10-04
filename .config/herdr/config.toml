@@ -1,7 +1,7 @@
 # Ported from ~/.tmux.conf (custom bindings + default tmux bindings)
 
 [terminal]
-default_shell = "/bin/zsh"
+default_shell = "/bin/bash"
 
 [keys]
 prefix = "ctrl+b"

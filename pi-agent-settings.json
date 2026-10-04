@@ -8,7 +8,9 @@
     "npm:pi-subagents",
     "npm:pi-mcp-adapter",
     "npm:pi-vimmode",
-    "git:github.com/monotykamary/pi-multiprovider"
+    "git:github.com/monotykamary/pi-multiprovider",
+    "npm:pi-rtk-optimizer",
+    "npm:@upstash/context7-pi"
   ],
   "defaultProvider": "opencode-go",
   "defaultModel": "deepseek-v4.1-flash",
