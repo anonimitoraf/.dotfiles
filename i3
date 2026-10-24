@@ -245,6 +245,9 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xmousepasteblock
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 exec_always --no-startup-id xsetroot -solid "#242424"
+# TRCC (Thermalright LCD/LED) daemon: start at login if trcc is installed and
+# not already serving. exec_always is safe here because daemon-status guards it.
+exec_always --no-startup-id sh -c 'command -v trcc >/dev/null 2>&1 && { trcc daemon-status >/dev/null 2>&1 || trcc daemon >/dev/null 2>&1; }'
 
 # For my Thinkpad x270
 # exec_always --no-startup-id xgamma -bgamma 0.8
@@ -407,3 +410,12 @@ bar {
 }
 
 exec --no-startup-id setup_ngrok_ssh
+
+# >>> jcode launch hotkeys (managed) >>>
+# jcode: home
+bindsym Mod4+semicolon exec --no-startup-id "/home/anonimito/.jcode/hotkey/launch_jcode_0_cmd_semicolon.sh"
+# jcode: last project
+bindsym Mod4+apostrophe exec --no-startup-id "/home/anonimito/.jcode/hotkey/launch_jcode_1_cmd_quote.sh"
+# jcode: self-dev
+bindsym Mod4+Shift+apostrophe exec --no-startup-id "/home/anonimito/.jcode/hotkey/launch_jcode_2_cmd_shift_quote.sh"
+# <<< jcode launch hotkeys (managed) <<<
