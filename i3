@@ -305,10 +305,16 @@ mode "$mode_gaps_outer" {
 # set power-manager and volume control
 exec --no-startup-id mate-power-manager
 
-# volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +20% && notify-send -t 500 --hint int:transient:1 "Volume up"
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -20% && notify-send -t 500 --hint int:transient:1 "Volume down"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "$(pactl get-default-sink)" toggle && notify-send -t 500 --hint int:transient:1 "Mute toggle"
+# volume control (notification shows the resulting level; step is in percent)
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh up 20
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.dotfiles/scripts/volume.sh down 20
+bindsym XF86AudioMute exec --no-startup-id ~/.dotfiles/scripts/volume.sh mute
+
+# Notification daemon. dunst is much snappier than the stock notification-daemon
+# and lets volume changes replace each other instead of stacking.
+# Install once with:  sudo apt install dunst
+# Harmless if missing (the default daemon is still D-Bus activated).
+exec --no-startup-id dunst
 
 
 
