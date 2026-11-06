@@ -61,4 +61,7 @@ sudo ln -sf ~/.dotfiles/pi-agent-themes ~/.pi/agent/themes
 
 mkdir -p ~/.config/herdr
 sudo ln -sf ~/.dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
+
+mkdir -p /etc/howdy
+sudo ln -sf ~/.dotfiles/howdy /etc/howdy/config.ini
 ```
