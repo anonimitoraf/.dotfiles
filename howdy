@@ -1,6 +1,10 @@
-# Symlinked to /etc/howdy/config.ini, where pam_howdy reads it as root:
-#   mkdir -p /etc/howdy && sudo ln -sf ~/.dotfiles/howdy /etc/howdy/config.ini
-# Keep this copy in sync after `howdy config` / `howdy set` edits.
+# Template for /etc/howdy/config.ini, which pam_howdy reads as root:
+#   mkdir -p /etc/howdy
+#   sudo install -m 644 ~/.dotfiles/howdy /etc/howdy/config.ini
+#   sudo ~/personal/scripts/howdy-camera.sh --set     # resolves device_path
+# Installed as a copy rather than a symlink on purpose: device_path is the only
+# machine-specific value, and --set rewrites it, so linking would drag this
+# host's USB serial into the repo (and every machine would fight over the line).
 
 # Howdy config file
 # Press CTRL + X to save in the nano editor
@@ -51,7 +55,9 @@ timeout = 4
 
 # The path of the device to capture frames from
 # Video devices are usually found in /dev/v4l/by-path/
-device_path = /dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_DD47D4BF-video-index0
+# Filled in per machine by scripts/howdy-camera.sh --set, so no USB serial or
+# port number ends up in this repo. "none" makes howdy refuse to start.
+device_path = none
 
 # Print a warning if the the video device is not found
 warn_no_device = true
