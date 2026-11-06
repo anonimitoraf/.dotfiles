@@ -245,6 +245,10 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xmousepasteblock
 exec_always --no-startup-id sudo ~/vendor-software/pentablet/pentablet
 exec_always --no-startup-id xsetroot -solid "#242424"
+# polkit authentication agent: without one, GUI auth prompts fail silently
+# (Bitwarden "unlock with system authentication", pamac, udisks, ...)
+# Only autostarted in MATE/XFCE/Cinnamon by the distro, hence explicit here.
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # TRCC (Thermalright LCD/LED) daemon: start at login if trcc is installed and
 # not already serving. exec_always is safe here because daemon-status guards it.
 exec_always --no-startup-id sh -c 'command -v trcc >/dev/null 2>&1 && { trcc daemon-status >/dev/null 2>&1 || trcc daemon >/dev/null 2>&1; }'
