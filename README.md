@@ -58,6 +58,7 @@ sudo ln -sf ~/.dotfiles/global-instructions.md ~/.opencode/global-instructions.m
 mkdir -p ~/.pi/agent
 sudo ln -sf ~/.dotfiles/pi-agent-settings.json ~/.pi/agent/settings.json
 sudo ln -sf ~/.dotfiles/pi-agent-themes ~/.pi/agent/themes
+sudo ln -sf ~/.dotfiles/pi-agent-extensions/context-bar.ts ~/.pi/agent/extensions/context-bar.ts
 
 mkdir -p ~/.config/herdr
 sudo ln -sf ~/.dotfiles/.config/herdr/config.toml ~/.config/herdr/config.toml
