@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "1.5.2",
   "packages": [
     "npm:@plannotator/pi-extension",
     "npm:pi-opencode-bridge",
@@ -7,10 +7,11 @@
     "npm:pi-simplify",
     "npm:pi-subagents",
     "npm:pi-mcp-adapter",
-    "npm:pi-vimmode",
     "git:github.com/monotykamary/pi-multiprovider",
     "npm:pi-rtk-optimizer",
-    "npm:@upstash/context7-pi"
+    "npm:@upstash/context7-pi",
+    "npm:pi-powerline",
+    "npm:pi-vimmode"
   ],
   "defaultProvider": "opencode-go",
   "defaultModel": "deepseek-v4.1-flash",
@@ -27,5 +28,15 @@
   "autocompleteMaxVisible": 10,
   "terminal": {
     "showTerminalProgress": true
+  },
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.0",
+    "{\"source\":\"npm:pi-mcp-adapter\",\"scope\":\"user\"}": "7.0.1",
+    "{\"source\":\"git:github.com/monotykamary/pi-multiprovider\",\"scope\":\"user\"}": "0.12.2",
+    "{\"source\":\"npm:pi-rtk-optimizer\",\"scope\":\"user\"}": "0.9.0",
+    "{\"source\":\"npm:pi-powerline\",\"scope\":\"user\"}": "0.11.2"
   }
 }
